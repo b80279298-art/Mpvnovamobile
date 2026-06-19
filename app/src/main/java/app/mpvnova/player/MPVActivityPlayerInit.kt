@@ -14,6 +14,8 @@ internal fun MPVActivity.initListeners() {
     bindSeekbarListeners()
     bindTouchAndInsetsListeners()
     bindActivityCallbacks()
+    touchGestureDetector = initTouchGestureDetector()
+    pinchGestureDetector = initPinchGestureDetector()
 }
 
 internal fun MPVActivity.finishWithResult(code: Int, includeTimePos: Boolean = false) {

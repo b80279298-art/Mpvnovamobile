@@ -15,7 +15,10 @@ import android.os.Handler
 import android.os.Looper
 import android.support.v4.media.session.MediaSessionCompat
 import android.support.v4.media.session.PlaybackStateCompat
+import android.view.GestureDetector
 import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.ScaleGestureDetector
 import android.view.View
 import android.view.ViewGroup.MarginLayoutParams
 import android.widget.SeekBar
@@ -118,6 +121,17 @@ open class MPVActivity : AppCompatActivity() {
     internal var audioManager: AudioManager? = null
     internal var audioFocusRequest: AudioFocusRequestCompat? = null
     internal var audioFocusRestore: () -> Unit = {}
+
+    internal var touchGestureDetector: GestureDetector? = null
+    internal var pinchGestureDetector: ScaleGestureDetector? = null
+
+    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+        if (ev != null) {
+            pinchGestureDetector?.onTouchEvent(ev)
+            touchGestureDetector?.onTouchEvent(ev)
+        }
+        return super.dispatchTouchEvent(ev)
+    }
 
     internal val psc = Utils.PlaybackStateCache()
     internal var mediaSession: MediaSessionCompat? = null
