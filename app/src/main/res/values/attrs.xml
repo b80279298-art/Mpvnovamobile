@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- since android has no docs on this, this serves as "reference" on how to declare attrs:
+    https://android.googlesource.com/platform/frameworks/support/+/master/v7/appcompat/res/values/attrs.xml
+    -->
+
+    <declare-styleable name="ScalerPreferenceDialog">
+        <attr name="entries" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="InterpolationPreferenceDialog">
+        <attr name="sync_entries" format="reference" />
+        <attr name="sync_default" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ConfigEditDialog">
+        <attr name="filename" format="string" />
+        <attr name="dialogMessage" format="string" />
+    </declare-styleable>
+
+    <!-- Color to apply to separator for OK/Cancel buttons -->
+    <attr name="nnf_separator_color" format="color"/>
+    <!-- Drawable to use as a divider between list items (optional) -->
+    <attr name="nnf_list_item_divider" format="reference"/>
+
+    <attr name="materialToolbarStyle" format="reference" />
+
+    <attr name="mpvAccent" format="color" />
+    <attr name="mpvAccentHot" format="color" />
+    <attr name="mpvAccentDeep" format="color" />
+    <attr name="mpvAccentInk" format="color" />
+    <attr name="mpvTextOnAccent" format="color" />
+    <attr name="mpvFilterActiveIcon" format="color" />
+    <attr name="mpvWindowStart" format="color" />
+    <attr name="mpvWindowCenter" format="color" />
+    <attr name="mpvWindowEnd" format="color" />
+    <attr name="mpvWindowGlowStart" format="color" />
+    <attr name="mpvWindowGlowEnd" format="color" />
+    <attr name="mpvWindowGlowAltStart" format="color" />
+    <attr name="mpvWindowGlowAltEnd" format="color" />
+    <attr name="mpvSurfaceStart" format="color" />
+    <attr name="mpvSurfaceEnd" format="color" />
+    <attr name="mpvSurfaceAltStart" format="color" />
+    <attr name="mpvSurfaceAltEnd" format="color" />
+    <attr name="mpvSurfaceSoft" format="color" />
+    <attr name="mpvSurfaceStrongStart" format="color" />
+    <attr name="mpvSurfaceStrongEnd" format="color" />
+    <attr name="mpvHeroStart" format="color" />
+    <attr name="mpvHeroEnd" format="color" />
+    <attr name="mpvOverlayStart" format="color" />
+    <attr name="mpvOverlayCenter" format="color" />
+    <attr name="mpvOverlayEnd" format="color" />
+    <attr name="mpvChipStart" format="color" />
+    <attr name="mpvChipEnd" format="color" />
+    <attr name="mpvStroke" format="color" />
+    <attr name="mpvStrokeStrong" format="color" />
+    <attr name="mpvStrokeFocus" format="color" />
+    <attr name="mpvFocusWash" format="color" />
+    <attr name="mpvFocusWashSoft" format="color" />
+</resources>

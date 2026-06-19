@@ -1,0 +1,165 @@
+apply plugin: 'com.android.application'
+apply plugin: 'dev.detekt'
+import java.util.Properties
+
+ext.appVersionCode = 8125
+
+def releaseKeystoreProperties = new Properties()
+def releaseKeystorePropertiesFile = rootProject.file("keystore.properties")
+if (releaseKeystorePropertiesFile.exists()) {
+    releaseKeystorePropertiesFile.withInputStream { releaseKeystoreProperties.load(it) }
+}
+
+def releaseStoreFile = System.getenv("MPVNOVA_STORE_FILE") ?: releaseKeystoreProperties.getProperty("storeFile")
+def releaseStorePassword = System.getenv("MPVNOVA_STORE_PASSWORD") ?: releaseKeystoreProperties.getProperty("storePassword")
+def releaseKeyAlias = System.getenv("MPVNOVA_KEY_ALIAS") ?: releaseKeystoreProperties.getProperty("keyAlias")
+def releaseKeyPassword = System.getenv("MPVNOVA_KEY_PASSWORD") ?: releaseKeystoreProperties.getProperty("keyPassword")
+def hasReleaseSigning = [releaseStoreFile, releaseStorePassword, releaseKeyAlias, releaseKeyPassword].every { it }
+
+android {
+    namespace = 'app.mpvnova.player'
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 21
+        targetSdk = 35
+        applicationId = 'app.mpvnova.player'
+
+        versionCode = project.ext.appVersionCode
+        versionName = "2026-06-16"
+
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    flavorDimensions += "default"
+    productFlavors {
+        "default" {
+            isDefault = true
+        }
+        api29 {
+            targetSdk = 29
+            versionNameSuffix = "-oldapi"
+        }
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            release {
+                storeFile = rootProject.file(releaseStoreFile)
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+                enableV1Signing = true
+                enableV2Signing = true
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.release
+            }
+        }
+    }
+
+    packaging {
+        jniLibs {
+            // These bundled mpv/FFmpeg libraries are already packaged as-is by AGP.
+            keepDebugSymbols += [
+                "**/libavcodec.so",
+                "**/libavdevice.so",
+                "**/libavfilter.so",
+                "**/libavformat.so",
+                "**/libavutil.so",
+                "**/libc++_shared.so",
+                "**/libmpv.so",
+                "**/libplayer.so",
+                "**/libswresample.so",
+                "**/libswscale.so",
+            ]
+        }
+    }
+
+    lint {
+        disable += [
+            // Keep lint useful for build-breaking correctness checks while
+            // filtering noisy style/resource warnings that do not match this
+            // TV-focused fork or are already intentional upstream patterns.
+            "ChromeOsAbiSupport",
+            "ContentDescription",
+            "DiscouragedApi",
+            "GradleDependency",
+            "HardcodedText",
+            "IconLauncherShape",
+            "OldTargetApi",
+            "PictureInPictureIssue",
+            "PluralsCandidate",
+            "RtlSymmetry",
+            "ScopedStorage",
+            "SelectedPhotoAccess",
+            "SetTextI18n",
+            "SmallSp",
+            "TooManyViews",
+            "TypographyEllipsis",
+            "UseKtx",
+        ]
+    }
+
+    splits {
+        abi {
+            enable = true
+            reset()
+            // Include only the ABIs that were actually built.
+            ["armeabi-v7a", "arm64-v8a", "x86", "x86_64"].each { abi ->
+                if (new File(project.projectDir, "src/main/jniLibs/${abi}").exists())
+                    include(abi)
+            }
+            universalApk = true // build an APK with all ABIs too
+        }
+    }
+}
+
+if (!hasReleaseSigning) {
+    logger.lifecycle("Release signing is not configured. Add keystore.properties or MPVNOVA_* env vars to produce signed release APKs.")
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.annotation:annotation:1.8.1'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.appcompat:appcompat-resources:1.7.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.core:core:1.13.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.fragment:fragment:1.5.4'
+    implementation 'androidx.lifecycle:lifecycle-common:2.6.2'
+    implementation 'androidx.loader:loader:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'androidx.media:media:1.7.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'com.google.android.material:material:1.13.0'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+detekt {
+    buildUponDefaultConfig = true
+    allRules = false
+    ignoreFailures = false
+    source = files("src/main/java", "src/test/java")
+}
+
+tasks.withType(dev.detekt.gradle.Detekt).configureEach {
+    reports {
+        html.required.set(true)
+        checkstyle.required.set(true)
+        sarif.required.set(true)
+        markdown.required.set(true)
+    }
+}

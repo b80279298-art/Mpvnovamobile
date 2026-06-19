@@ -1,0 +1,9 @@
+mpvNova is a TV-first video player for Android TV, Google TV, and Fire OS based on <a href="https://github.com/mpv-player/mpv">libmpv</a>.
+
+Features:
+* Hardware and software video decoding
+* libass support for styled subtitles
+* Secondary (or dual) subtitle support
+* Advanced video settings (interpolation, debanding, scalers, ...)
+* Play network streams with the "Open URL" function
+* Background playback, Picture-in-Picture, remote and keyboard input supported

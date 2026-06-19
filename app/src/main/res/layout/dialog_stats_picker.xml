@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_tv_dialog_shell"
+    android:elevation="24dp"
+    android:orientation="vertical"
+    android:paddingStart="28dp"
+    android:paddingTop="26dp"
+    android:paddingEnd="28dp"
+    android:paddingBottom="26dp">
+
+    <TextView
+        style="@style/MpvTv.TextSmallCaps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stats_picker_eyebrow"
+        android:textColor="?attr/mpvAccentHot" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/dialog_title_stats"
+        android:textColor="@color/tv_text"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_tv_panel_card"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:id="@+id/statsPage1Row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_list_row"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:minHeight="68dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                style="@style/MpvTv.TextSmallCaps"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@string/stats_page_1_number"
+                android:textColor="@color/tv_text_mute" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/stats_page_1_title"
+                    android:textColor="@color/tv_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="General" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/stats_page_1_summary"
+                    android:textColor="@color/tv_text_dim"
+                    android:textSize="12sp"
+                    tools:text="Playback, decoder, video, and audio state." />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statsPage2Row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_list_row"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:minHeight="68dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                style="@style/MpvTv.TextSmallCaps"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@string/stats_page_2_number"
+                android:textColor="@color/tv_text_mute" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/stats_page_2_title"
+                    android:textColor="@color/tv_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="Timing" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/stats_page_2_summary"
+                    android:textColor="@color/tv_text_dim"
+                    android:textSize="12sp"
+                    tools:text="Frame pacing, sync, scaling, and render timing." />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/statsPage3Row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/bg_list_row"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:minHeight="68dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                style="@style/MpvTv.TextSmallCaps"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="@string/stats_page_3_number"
+                android:textColor="@color/tv_text_mute" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/stats_page_3_title"
+                    android:textColor="@color/tv_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="Cache" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="@string/stats_page_3_summary"
+                    android:textColor="@color/tv_text_dim"
+                    android:textSize="12sp"
+                    tools:text="Buffering, demuxer, and read-ahead state." />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelBtn"
+            style="@style/Mpv.SurfaceButton.Compact"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:minWidth="84dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/dialog_cancel" />
+    </LinearLayout>
+</LinearLayout>

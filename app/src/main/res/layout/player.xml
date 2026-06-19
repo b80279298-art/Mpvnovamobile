@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    MPV Player overlay - Android TV 10-foot UI
+    ==========================================
+    One-row left-aligned control bar at the bottom, thin purple seekbar, title
+    aligned left, time on the far right. Top-right pill for PiP/menu.
+
+    All @+id values that existed in the legacy layout are preserved so
+    MPVActivity.kt binds unchanged; new buttons (controlsScrim,
+    voiceBoostBtn, nightModeBtn, audioNormBtn) are wired in MPVActivity.kt.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <app.mpvnova.player.MPVView
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/playerBrightnessOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000000"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no"
+        android:visibility="gone" />
+
+    <!-- Opaque backdrop that hides stream-open churn (embedded cover-art flash + the
+         demuxer's far-offset network seeks) until the first real frame. Driven by
+         streamOpenLoading in refreshLoadingOverlay(); sits below the loading chip. -->
+    <View
+        android:id="@+id/streamLoadingCover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="#000000"
+        android:clickable="false"
+        android:focusable="false"
+        android:importantForAccessibility="no"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/loadingOverlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:alpha="0"
+        android:background="@drawable/bg_player_toast"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingStart="22dp"
+        android:paddingTop="18dp"
+        android:paddingEnd="22dp"
+        android:paddingBottom="18dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/loadingSpinner"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/tv_text_dim" />
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans"
+            android:letterSpacing="0.08"
+            android:text="@string/player_loading_stream"
+            android:textAllCaps="true"
+            android:textColor="@color/tv_text"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/outside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Dark scrim behind control bar for legibility.
+             Bound in MPVActivity so visibility follows the controls. -->
+        <View
+            android:id="@+id/controlsScrim"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_scrim_bottom" />
+
+        <!-- =============== BOTTOM CONTROLS PANEL =============== -->
+        <LinearLayout
+            android:id="@+id/controls"
+            style="?buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_player_controls"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="12dp">
+
+            <!-- Title row (left-aligned) -->
+            <LinearLayout
+                android:id="@+id/controls_title_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:textColor="@color/tv_text"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="-0.01"
+                    android:visibility="gone"
+                    tools:text="Song Title" />
+
+                <TextView
+                    android:id="@+id/minorTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:singleLine="true"
+                    android:textColor="@color/tv_text_dim"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.06"
+                    android:visibility="gone"
+                    tools:text="Artist / Album" />
+
+                <TextView
+                    android:id="@+id/fullTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:letterSpacing="0.01"
+                    android:paddingStart="2dp"
+                    android:paddingBottom="4dp"
+                    android:singleLine="true"
+                    android:textColor="@color/tv_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="RtlSymmetry"
+                    tools:text="Wistoria: Wand and Sword - S01E08" />
+
+            </LinearLayout>
+
+            <!-- Seekbar: thin progress line, no inline time.
+                 Flat: was wrapped in a weighted LinearLayout with a single
+                 child; the wrapper added a layout pass and the weight
+                 forced a two-pass measure for no functional reason. -->
+            <app.mpvnova.player.ChapterSeekBar
+                android:id="@+id/playbackSeekbar"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:maxHeight="8dp"
+                android:minHeight="8dp"
+                android:progressDrawable="@drawable/seekbar_progress_tv"
+                android:splitTrack="false"
+                android:thumb="@drawable/seekbar_thumb_tv"
+                android:thumbOffset="12dp" />
+
+            <!-- Button row wrapper: reorderable icons on LEFT, time on RIGHT -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:layoutDirection="ltr"
+                android:orientation="horizontal">
+
+                <!-- Reorderable action buttons (MPVActivity.updateAudioUI re-orders
+                     children of this group, so only views WITH stable ids belong here). -->
+                <LinearLayout
+                    android:id="@+id/controls_button_group"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp"
+                    android:gravity="center_vertical|start"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/playBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/btn_play"
+                        app:tint="@color/tv_text"
+                        tools:src="@drawable/ic_play_arrow_black_24dp">
+                        <requestFocus />
+                    </ImageButton>
+
+                    <!-- Next Chapter: press = skip to next chapter, hold = chapter picker -->
+                    <ImageButton
+                        android:id="@+id/nextChapterBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/btn_next_chapter"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_next_chapter_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/prevBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/dialog_prev"
+                        app:srcCompat="@drawable/ic_skip_previous_black_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/nextBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/dialog_next"
+                        app:srcCompat="@drawable/ic_skip_next_black_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/cycleSubsBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/track_subs"
+                        app:srcCompat="@drawable/ic_subtitles_black_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/cycleAudioBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/track_audio"
+                        app:srcCompat="@drawable/ic_audiotrack_black_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <Button
+                        android:id="@+id/cycleSpeedBtn"
+                        style="?buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="56dp"
+                        android:minHeight="48dp"
+                        android:textColor="@color/tv_text"
+                        tools:text="1.00X" />
+
+                    <Button
+                        android:id="@+id/cycleDecoderBtn"
+                        style="?buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="56dp"
+                        android:minHeight="48dp"
+                        android:textColor="@color/tv_text"
+                        tools:text="HW+" />
+
+                    <ImageButton
+                        android:id="@+id/statsToggleBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/toggle_stats"
+                        app:srcCompat="@drawable/round_code_24"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/voiceBoostBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/btn_voice_boost"
+                        app:srcCompat="@drawable/ic_voice_boost_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/volumeBoostBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/btn_volume_boost"
+                        app:srcCompat="@drawable/ic_volume_boost_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/nightModeBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/btn_night_mode"
+                        app:srcCompat="@drawable/ic_night_mode_24dp"
+                        app:tint="@color/tv_text" />
+
+                    <ImageButton
+                        android:id="@+id/audioNormBtn"
+                        style="@style/MpvPlayer.ButtonBarIconButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/btn_audio_norm"
+                        app:srcCompat="@drawable/ic_audio_norm_24dp"
+                        app:tint="@color/tv_text" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_purple"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="12dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/playbackPositionTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:textColor="@color/tv_text"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry"
+                        tools:text="03:29" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:text=" / "
+                        android:textColor="@color/tv_text_mute"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/playbackDurationTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:textColor="@color/tv_text_dim"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry"
+                        tools:text="23:48" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Minimal seek overlay: shown only while seeking with ◀/▶ when the
+             "minimal seekbar while seeking" option is on. Kept outside @id/controls
+             so it never drags in the scrim/clock/autopause machinery. -->
+        <LinearLayout
+            android:id="@+id/seekOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="28dp"
+            android:alpha="0"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/seekOverlayTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_player_toast"
+                android:elevation="8dp"
+                android:fontFamily="monospace"
+                android:paddingStart="12dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="6dp"
+                android:textColor="@color/tv_text"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry"
+                tools:text="03:29 / 23:48" />
+
+            <app.mpvnova.player.ChapterSeekBar
+                android:id="@+id/seekOverlayBar"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:max="1000"
+                android:maxHeight="8dp"
+                android:minHeight="8dp"
+                android:progressDrawable="@drawable/seekbar_progress_tv"
+                android:splitTrack="false"
+                android:thumb="@null"
+                tools:progress="350" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/timeInfoPanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_glass_panel"
+            android:gravity="center_horizontal"
+            android:minWidth="132dp"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp"
+            tools:ignore="RelativeOverlap">
+
+            <TextView
+                android:id="@+id/clockTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textColor="@color/tv_text"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="01:02 AM" />
+
+            <TextView
+                android:id="@+id/endsAtTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="monospace"
+                android:textColor="@color/tv_text_dim"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                tools:text="Ends at 01:22 AM" />
+        </LinearLayout>
+
+        <!-- =============== TOP-LEFT: STATS FOR NERDS =============== -->
+        <TextView
+            android:id="@+id/statsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/timeInfoPanel"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_glass_panel"
+            android:fontFamily="monospace"
+            android:paddingStart="14dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="14dp"
+            android:paddingBottom="10dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="?attr/mpvAccentHot"
+            android:textSize="11sp"
+            android:visibility="gone"
+            tools:text="60 FPS"
+            tools:visibility="visible" />
+
+        <!-- =============== TOP-CENTER: MEDIA TITLE =============== -->
+        <LinearLayout
+            android:id="@+id/playerTitleOverlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_player_toast"
+            android:elevation="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="10dp"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <TextView
+                android:id="@+id/playerTitlePrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="2"
+                android:maxWidth="620dp"
+                android:shadowColor="#CC000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="8"
+                android:textColor="@color/tv_text"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                tools:text="Attack on Titan" />
+
+            <TextView
+                android:id="@+id/playerTitleSecondary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:maxWidth="620dp"
+                android:shadowColor="#CC000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="8"
+                android:textColor="@color/tv_text_dim"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="S1 E1"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/playerToast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:alpha="0"
+            android:background="@drawable/bg_player_toast"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingStart="18dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="18dp"
+            android:paddingBottom="12dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/playerToastTitle"
+                style="@style/MpvTv.TextSmallCaps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/mpvAccentHot"
+                android:visibility="gone"
+                tools:text="Voice boost"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/playerToastMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:maxWidth="420dp"
+                android:textColor="@color/tv_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="Clear" />
+        </LinearLayout>
+
+        <!-- =============== TOP-RIGHT: PIP/MENU PILL =============== -->
+        <LinearLayout
+            android:id="@+id/top_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/bg_player_top"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+            <ImageButton
+                android:id="@+id/topPiPBtn"
+                style="@style/MpvPlayer.ButtonBarIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/action_pip"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_picture_in_picture_24dp"
+                app:tint="@color/tv_text" />
+
+            <ImageButton
+                android:id="@+id/topMenuBtn"
+                style="@style/MpvPlayer.ButtonBarIconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/action_settings"
+                android:padding="8dp"
+                app:srcCompat="@drawable/ic_settings_black_24dp"
+                app:tint="@color/tv_text" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

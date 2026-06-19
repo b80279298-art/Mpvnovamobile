@@ -1,0 +1,79 @@
+@file:Suppress("MatchingDeclarationName")
+
+package app.mpvnova.player
+
+import android.os.Build
+import androidx.annotation.StringRes
+
+internal data class PreferredDecoderModeOption(
+    val value: String,
+    @param:StringRes val titleRes: Int,
+    @param:StringRes val descriptionRes: Int,
+)
+
+internal fun preferredDecoderModeOptions(includeShieldMode: Boolean): List<PreferredDecoderModeOption> = buildList {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        add(preferredDecoderModeOption(MPVView.DECODER_MODE_HW_PLUS))
+    }
+    add(preferredDecoderModeOption(MPVView.DECODER_MODE_HW))
+    add(preferredDecoderModeOption(MPVView.DECODER_MODE_SW))
+    add(preferredDecoderModeOption(MPVView.DECODER_MODE_GNEXT))
+    add(preferredDecoderModeOption(MPVView.DECODER_MODE_MPV_CONF))
+    if (includeShieldMode) {
+        add(preferredDecoderModeOption(MPVView.DECODER_MODE_SHIELD_H10P))
+    }
+}
+
+private fun preferredDecoderModeOption(mode: String): PreferredDecoderModeOption =
+    PreferredDecoderModeOption(
+        value = mode,
+        titleRes = decoderModeSettingsTitleRes(mode),
+        descriptionRes = decoderModeDescriptionRes(mode),
+    )
+
+@StringRes
+internal fun decoderModeSettingsTitleRes(mode: String): Int = when (mode) {
+    MPVView.DECODER_MODE_HW_PLUS -> R.string.decoder_mode_hw_plus_settings
+    MPVView.DECODER_MODE_HW -> R.string.decoder_mode_hw_settings
+    MPVView.DECODER_MODE_SW -> R.string.decoder_mode_sw_settings
+    MPVView.DECODER_MODE_GNEXT -> R.string.decoder_mode_gnext_settings
+    MPVView.DECODER_MODE_SHIELD_H10P -> R.string.decoder_mode_shield_h10p_settings
+    MPVView.DECODER_MODE_MPV_CONF -> R.string.decoder_mode_mpv_conf_settings
+    else -> R.string.pref_preferred_decoder_mode_summary
+}
+
+@StringRes
+internal fun decoderModeDescriptionRes(mode: String?): Int = when (mode) {
+    MPVView.DECODER_MODE_HW_PLUS -> R.string.decoder_mode_hw_plus_description
+    MPVView.DECODER_MODE_HW -> R.string.decoder_mode_hw_description
+    MPVView.DECODER_MODE_SW -> R.string.decoder_mode_sw_description
+    MPVView.DECODER_MODE_GNEXT -> R.string.decoder_mode_gnext_description
+    MPVView.DECODER_MODE_SHIELD_H10P -> R.string.decoder_mode_shield_h10p_description
+    MPVView.DECODER_MODE_MPV_CONF -> R.string.decoder_mode_mpv_conf_description
+    else -> R.string.pref_preferred_decoder_mode_summary
+}
+
+internal fun defaultPreferredDecoderMode(): String {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        MPVView.DECODER_MODE_HW_PLUS
+    else
+        MPVView.DECODER_MODE_HW
+}
+
+internal fun normalizedPreferredDecoderMode(mode: String?, includeShieldMode: Boolean): String {
+    val options = preferredDecoderModeOptions(includeShieldMode)
+    val fallback = defaultPreferredDecoderMode().takeIf { preferred ->
+        options.any { it.value == preferred }
+    } ?: options.first().value
+    return mode?.takeIf { candidate -> options.any { it.value == candidate } } ?: fallback
+}
+
+internal fun decoderModeCompactLabel(mode: String): String = when (mode) {
+    MPVView.DECODER_MODE_HW_PLUS -> "HW+"
+    MPVView.DECODER_MODE_HW -> "HW"
+    MPVView.DECODER_MODE_SW -> "SW"
+    MPVView.DECODER_MODE_GNEXT -> "G-NXT"
+    MPVView.DECODER_MODE_SHIELD_H10P -> "SHLD"
+    MPVView.DECODER_MODE_MPV_CONF -> "CFG"
+    else -> "HW"
+}

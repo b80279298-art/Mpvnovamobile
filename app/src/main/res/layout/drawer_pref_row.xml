@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Toggle row used inside the player drawer's Interface tab. Mirrors the
+     wider settings-screen rows: title on top, optional summary under it,
+     and a right-aligned On/Off chip that lights up when the toggle is on. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_tv_player_button"
+    android:focusable="true"
+    android:focusableInTouchMode="false"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:minHeight="56dp"
+    android:nextFocusLeft="@id/drawerContentList"
+    android:nextFocusRight="@id/tabBtnVideo"
+    android:orientation="horizontal"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/prefRowTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tv_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text="Pause when controls show"
+            xmlns:tools="http://schemas.android.com/tools" />
+
+        <TextView
+            android:id="@+id/prefRowSummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/tv_text_dim"
+            android:textSize="11sp"
+            tools:text="Automatically pause playback while the controls overlay is visible."
+            xmlns:tools="http://schemas.android.com/tools" />
+    </LinearLayout>
+
+    <!-- Fixed width on purpose: a wrap_content value would requestLayout on every
+         On/Off setText, and the focusable RecyclerView repairs focus to the top
+         row during that layout pass, scrolling the list up. -->
+    <TextView
+        android:id="@+id/prefRowValue"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="monospace"
+        android:gravity="end"
+        android:textColor="?attr/mpvAccentHot"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        tools:text="ON"
+        xmlns:tools="http://schemas.android.com/tools" />
+</LinearLayout>

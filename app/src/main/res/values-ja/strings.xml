@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file contains resource definitions for displayed strings, allowing
+     them to be changed based on the locale and options. -->
+<resources>
+    <!-- Simple strings. -->
+    <string name="mpv_activity">mpvNova</string>
+    <string name="title_activity_settings">設定</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">キャンセル</string>
+    <string name="dialog_save">保存</string>
+    <string name="dialog_yes">はい</string>
+    <string name="dialog_no">いいえ</string>
+    <string name="dialog_prev">前へ</string>
+    <string name="dialog_next">次へ</string>
+    <string name="track_audio">オーディオ</string>
+    <string name="track_subs">字幕</string>
+    <string name="track_off">オフ</string>
+    <string name="ui_fps">%.3f FPS</string>
+    <string name="ui_speed">%.2fx</string>
+
+    <!-- Less simple strings -->
+    <string name="title_speed_dialog">再生スピード</string>
+    <string name="error_no_file">ファイルがありません。終了します。</string>
+    <string name="notice_file_appended">プレイリストに追加されました</string>
+    <string name="exit_warning_playlist">プレイリストにまだ%dファイル残っています\n本当に終了しますか?</string>
+    <string name="contrast">コントラスト</string>
+    <string name="video_brightness">明るさ</string>
+    <string name="gamma">ガンマ値</string>
+    <string name="saturation">鮮やかさ</string>
+    <string name="audio_delay">オーディオの遅延</string>
+    <string name="sub_delay">字幕の遅延</string>
+    <string name="notice_show_all_files">すべてのファイルを表示</string>
+    <string name="notice_show_media_files">メディアファイルのみ表示</string>
+
+    <!-- Action buttons -->
+    <string name="open_external_audio">外部オーディオファイルを読み込む…</string>
+    <string name="open_external_sub">外部字幕ファイルを読み込む…</string>
+    <string name="action_playlist">プレイリスト</string>
+    <string name="resume_bg_playback">バックグラウンドで再生</string>
+    <string name="toggle_stats">統計情報の表示切替</string>
+    <string name="chapter_button">チャプター</string>
+    <string name="action_settings">設定</string>
+    <string name="action_open_url">URLを開く</string>
+    <string name="action_pick_file">ファイルを選択</string>
+    <string name="action_external_storage">外部ストレージ</string>
+    <string name="action_toggle_filter">フィルタ切替</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_header_general">一般</string>
+    <string name="pref_header_ui">ユーザーインターフェース</string>
+
+    <string name="pref_default_file_manager_path_title">デフォルトのファイルマネージャのパス</string>
+
+    <string name="pref_default_audio_language_title">デフォルトのオーディオ言語</string>
+    <string name="pref_default_audio_language_message">多言語のオーディオを含む場合に使用されるデフォルトのオーディオ言語を選択。\n2文字か3文字の言語コードを使用します。コンマ(,)で区切って複数の言語を指定できます。</string>
+
+    <string name="pref_default_subtitle_language_title">デフォルトの字幕言語</string>
+    <string name="pref_default_subtitle_language_message">多言語の字幕を含む場合に使用されるデフォルトの字幕言語を選択。\n2文字か3文字の言語コードを使用します。コンマ(,)で区切って複数の言語を指定できます。</string>
+
+    <string name="pref_hardware_decoding_title">ハードウェアデコード</string>
+    <string name="pref_hardware_decoding_summary">ソフトウェアデコードの代わりに(利用可能なら)ハードウェアデコードを使用します</string>
+
+    <string name="pref_background_play_title">バックグラウンド再生</string>
+    <string name="pref_background_play_summary">アプリがバックグランドになった場合にそのまま再生する/停止するの設定</string>
+
+    <string name="pref_save_position_title">終了時に再生位置を保存</string>
+    <string name="pref_save_position_summary">各ファイルの再生終了時に停止位置を保存します。同じファイルを再生した際に前回終了時の位置から再開します</string>
+
+    <string name="pref_header_video">ビデオ</string>
+
+    <string name="pref_video_upscale_title">アップスケール フィルタ</string>
+
+    <string name="pref_video_downscale_title">ダウンスケール フィルタ</string>
+
+    <string name="pref_video_debanding_title">デバンディング</string>
+    <string name="pref_video_debanding_summary">デバンディング モードの選択</string>
+
+    <string name="pref_video_interpolation_title">フレーム補間</string>
+    <string name="pref_video_interpolation_message">ビデオのFPSと画面のリフレッシュレートが合わない場合のぼけた感じを減らせます。</string>
+
+    <string name="pref_video_tscale_title">時間的補間フィルタ</string>
+    <string name="pref_video_tscale_summary">時間軸(フレーム)補間のフィルタの選択</string>
+    <string name="pref_video_tscale_message">この設定はフレーム補間が有効になっている場合のみ適応されます。</string>
+
+    <string name="pref_video_fastdecode_title">低画質デコード</string>
+    <string name="pref_video_fastdecode_summary">(処理が追いつかない場合)コマ落ちを防いでなめらなに再生できるように画質を落とします。\n<b>画質がかなり悪くなります</b></string>
+
+    <string name="pref_header_developer">開発者用</string>
+
+    <string name="pref_stats_mode_title">統計情報を表示</string>
+    <string name="pref_stats_mode_summary">どの統計情報を表示するか選択</string>
+
+    <string name="pref_gpu_debug_title">OpenGLデバッグを有効化</string>
+
+    <string name="pref_header_advanced">詳細設定</string>
+
+    <string name="pref_edit_mpv_conf">mpv.confを編集</string>
+    <string name="pref_edit_mpv_conf_message">mpvの設定ファイルを直接編集できます</string>
+
+    <string name="pref_edit_input_conf">input.confを編集</string>
+    <string name="pref_edit_input_conf_message">input.confを編集できます。これは主にAndroidTVやキーボード接続用です。\n\n重要:mpvNovaではいくつかキーがハードコードされていて変更できません。例:\"j\"(次の字幕)</string>
+
+    <!-- Strings used in Settings dialog preferences -->
+    <string name="scaler_param1">パラメータ1</string>
+    <string name="scaler_param2">パラメータ2</string>
+    <string name="interpolation_switch">フレーム補間を有効化</string>
+    <string name="interpolation_video_sync">ビデオ同期</string>
+
+    <!-- File picker -->
+    <string name="nnf_name">名前</string>
+    <string name="nnf_permission_external_write_denied">外部ストレージに書き込み権限がありません</string>
+    <string name="aspect_ratio">アスペクト比</string>
+    <string name="pref_bottom_controls_title">コントロールを画面の一番下に表示</string>
+    <string name="pref_ignore_audio_focus_summary">ほかのアプリが音声出力した際に再生を一時停止または音量を下げることをしない</string>
+    <string name="pref_ignore_audio_focus_title">音声フォーカスを無視</string>
+</resources>

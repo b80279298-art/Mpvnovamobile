@@ -1,0 +1,554 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This file contains resource definitions for displayed strings, allowing
+     them to be changed based on the locale and options. -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Simple strings. -->
+    <string name="mpv_activity">mpvNova</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_save">Save</string>
+    <string name="dialog_clear">Clear</string>
+    <string name="dialog_clear_all">Clear all</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_prev">Prev</string>
+    <string name="dialog_next">Next</string>
+    <string name="dialog_reset">Reset</string>
+    <string name="track_audio">Audio</string>
+    <string name="track_subs">Subs</string> <!-- short for "Subtitles" -->
+    <string name="track_off">Off</string>
+    <string name="status_on">On</string>
+    <string name="status_off">Off</string>
+    <string name="resume_toast_title">Resumed playback</string>
+    <string name="resume_toast_detail">From %1$s</string>
+    <string name="track_primary">Primary</string>
+    <string name="track_secondary">Secondary</string>
+    <string name="btn_play">Play</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_plus" translatable="false">+</string>
+    <string name="btn_minus" translatable="false">-</string>
+    <string name="btn_voice_boost">Voice boost</string>
+    <string name="btn_volume_boost">Volume boost</string>
+    <string name="btn_dialogue_downmix">Channel Downmix</string>
+    <string name="btn_center_boost">Center Boost</string>
+    <string name="btn_decrease" translatable="false">-</string>
+    <string name="btn_increase" translatable="false">+</string>
+    <string name="btn_night_mode">DRC</string>
+    <string name="btn_audio_norm">Audio normalization</string>
+    <string name="btn_voice_boost_summary">Pull speech forward with cleanup, presence, and light compression.</string>
+    <string name="btn_volume_boost_summary">Add loudness after dynamics processing.</string>
+    <string name="btn_dialogue_downmix_summary">Fold surround channels to stereo with center focus.</string>
+    <string name="btn_center_boost_summary">Boost center-channel dialogue in surround audio.</string>
+    <string name="btn_night_mode_summary">Compress peaks with matched gain and center focus.</string>
+    <string name="btn_audio_norm_summary">Even quiet and loud passages in real time.</string>
+    <string name="btn_next_chapter">Next chapter</string>
+    <string name="dialog_title_chapter">Go to chapter</string>
+    <string name="stats_picker_eyebrow">Stats</string>
+    <string name="dialog_title_stats">Choose stats</string>
+    <string name="stats_page_1_number" translatable="false">1</string>
+    <string name="stats_page_1_title">General</string>
+    <string name="stats_page_1_summary">Playback, decoder, video, and audio state.</string>
+    <string name="stats_page_2_number" translatable="false">2</string>
+    <string name="stats_page_2_title">Timing</string>
+    <string name="stats_page_2_summary">Frame pacing, sync, scaling, and render timing.</string>
+    <string name="stats_page_3_number" translatable="false">3</string>
+    <string name="stats_page_3_title">Cache</string>
+    <string name="stats_page_3_summary">Buffering, demuxer, and read-ahead state.</string>
+    <string name="toast_next_chapter_detail">Skipped to %1$s - %2$s</string>
+    <string name="toast_no_next_chapter">No next chapter</string>
+    <string name="toast_no_previous_chapter">No previous chapter</string>
+    <string name="toast_no_chapters_in_file">No chapter markers in this file</string>
+    <string name="toast_audio_norm_surround_hint">Surround track is heavy to process. Try Channel Downmix for smoother playback.</string>
+    <string name="player_ends_at">Ends at %1$s</string>
+    <string name="player_loading_stream">Opening stream...</string>
+    <string name="player_buffering_stream">Buffering stream...</string>
+    <string name="dialog_delay_label">Delay</string>
+    <string name="dialog_title_subs">Subtitles</string>
+    <string name="dialog_title_audio">Audio</string>
+    <string name="dialog_title_decoder">Decoder mode</string>
+    <string name="dialog_picker_subtitle_subs">Pick the subtitle track you want on screen.</string>
+    <string name="dialog_picker_subtitle_audio">Choose an audio track and shape the sound for your room.</string>
+    <string name="dialog_picker_subtitle_decoder">Select the decoder path that fits this device.</string>
+    <string name="dialog_section_tracks">Available tracks</string>
+    <string name="dialog_section_modes">Available modes</string>
+    <string name="dialog_section_timing_summary">Adjust subtitle sync without leaving playback.</string>
+    <string name="dialog_subtitle_section_label">Available subtitles</string>
+    <string name="dialog_subtitle_mode_label">Listening mode</string>
+    <string name="dialog_subtitle_primary_summary">Choose the main subtitle track or keep a second one ready.</string>
+    <string name="dialog_subtitle_secondary_summary">Pick a backup subtitle track that can stay separate from the primary one.</string>
+    <string name="dialog_subtitle_focus_title">Primary or backup</string>
+    <string name="dialog_subtitle_focus_summary">Use Primary for your main subtitle lane, or Secondary when you want a second track ready without replacing the first.</string>
+    <string name="dialog_subtitle_tip_title">Better for TV viewing</string>
+    <string name="dialog_subtitle_tip_summary">This layout keeps subtitle choices on one side and mode switching on the other, so it is easier to scan from the couch.</string>
+    <string name="dialog_persist_filters_summary">Keep your current filter setup for the next file.</string>
+    <string name="decoder_mode_hw_plus">HW+ (direct)</string>
+    <string name="decoder_mode_hw">HW (copy)</string>
+    <string name="decoder_mode_sw">SW (software)</string>
+    <string name="decoder_mode_gnext_paths">G-NEXT (direct/copy/software)</string>
+    <string name="decoder_mode_shield_h10p">Shield Anime (Hi10P)</string>
+    <string name="decoder_mode_mpv_conf">Custom mpv.conf</string>
+    <string name="decoder_mode_hw_plus_settings">HW+ - direct MediaCodec path</string>
+    <string name="decoder_mode_hw_settings">HW - MediaCodec copy path</string>
+    <string name="decoder_mode_sw_settings">SW - software decode</string>
+    <string name="decoder_mode_gnext_settings">G-NEXT - gpu-next + MediaCodec copy</string>
+    <string name="decoder_mode_shield_h10p_settings">Shield Anime - selected Hi10P fallback path</string>
+    <string name="decoder_mode_mpv_conf_settings">Custom - use mpv.conf decoder options</string>
+    <string name="decoder_mode_hw_plus_description">Uses the direct mediacodec path. Fastest when it works, but it can be pickier on some files and devices.</string>
+    <string name="decoder_mode_hw_description">Uses mediacodec-copy, copying decoded frames back before rendering. Usually the safest hardware path.</string>
+    <string name="decoder_mode_sw_description">Turns hardware decode off and uses ffmpeg software decoding. Most compatible, but much heavier on the CPU.</string>
+    <string name="decoder_mode_gnext_description">Uses the gpu-next renderer with mediacodec-copy. This keeps libplacebo rendering while avoiding the fragile direct hardware path.</string>
+    <string name="decoder_mode_shield_h10p_description">Shield-specific fallback for anime and other Hi10P H.264 files. Uses the Shield fallback path selected below.</string>
+    <string name="decoder_mode_mpv_conf_description">Leaves vo and hwdec to mpv.conf at startup. Turn off automatic decoder fallback and choose this to stop mpvNova from applying a decoder preset.</string>
+    <string name="pref_preferred_decoder_mode_summary_format">Current: %1$s\n%2$s</string>
+    <string name="ui_fps">%.3f FPS</string>
+    <string name="ui_speed">%.2fx</string>
+    <string name="ui_track">#%d</string>
+    <string name="ui_track_text">#%1$d: %2$s</string>
+    <string name="ui_track_title_lang">#%1$d: %2$s (%3$s)</string>
+    <string name="format_fixed_number" translatable="false">%.0f</string>
+    <string name="format_db">+%1$d dB</string>
+    <string name="format_downmix_active">%1$s · Active (%2$dch)</string>
+    <string name="format_downmix_stereo">%1$s · Already stereo</string>
+    <string name="format_downmix_multichannel">%1$s · %2$dch source</string>
+    <string name="filter_value_off">Off</string>
+    <string name="voice_boost_preset_soft">Speech +4</string>
+    <string name="voice_boost_preset_light">Speech +6</string>
+    <string name="voice_boost_preset_clear">Speech +8</string>
+    <string name="dialogue_downmix_preset_soft">Center 72%</string>
+    <string name="dialogue_downmix_preset_strong">Center 84%</string>
+    <string name="dialogue_downmix_preset_tv">Center 96%</string>
+    <string name="dialogue_downmix_preset_focus">Center 104%</string>
+    <string name="dialogue_downmix_preset_anchor">Center 110%</string>
+    <string name="voice_boost_preset_speech">Speech +10</string>
+    <string name="voice_boost_preset_loud">Speech max</string>
+    <string name="night_mode_preset_drc">DRC</string>
+    <string name="night_mode_preset_drc_plus" translatable="false">DRC+</string>
+    <string name="filter_blocked_by_drc">Blocked by\nDRC</string>
+    <string name="filter_blocked_by_audio_norm">Blocked by\nAudio\nNormalization</string>
+    <string name="audio_norm_preset_light">-18 LUFS</string>
+    <string name="audio_norm_preset_smooth">-17 LUFS</string>
+    <string name="audio_norm_preset_speech">-16 LUFS</string>
+    <string name="audio_norm_preset_balanced">-15 LUFS</string>
+    <string name="audio_norm_preset_strong">-14 LUFS</string>
+    <string name="audio_norm_preset_loudnorm_22">Loudnorm -22 LUFS</string>
+
+    <!-- Less simple strings -->
+    <string name="title_speed_dialog">Playback speed</string>
+    <string name="error_no_file">No file given, exiting</string>
+    <string name="notice_file_appended">File(s) appended to playlist</string>
+    <string name="notice_file_play">Starting playback of file(s)</string>
+    <string name="exit_warning_playlist">%d playlist items remaining.\nDo you really want to exit?</string>
+    <string name="contrast">Contrast</string>
+    <string name="video_brightness">Video brightness</string>
+    <string name="gamma">Gamma</string>
+    <string name="saturation">Saturation</string>
+    <string name="video_adjustment">Video adjustment</string>
+    <string name="aspect_ratio">Aspect ratio</string>
+    <string name="audio_delay">Audio delay</string>
+    <string name="sub_delay">Subtitle delay</string>
+    <string name="notice_show_all_files">Showing all files</string>
+    <string name="notice_show_media_files">Showing media files only</string>
+    <string name="option_remember_choice">Remember choice on next startup</string>
+    <string name="uri_invalid_protocol">Invalid protocol</string>
+
+    <!-- Action buttons -->
+    <string name="open_external_audio">Open external audio…</string>
+    <string name="open_external_sub">Open external subtitle…</string>
+    <string name="advanced_menu_title">Advanced</string>
+    <string name="resume_bg_playback">Play in background</string>
+    <string name="toggle_stats">Toggle stats</string>
+    <string name="chapter_button">Chapter</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_playlist">Playlist</string>
+    <string name="action_repeat">Repeat</string>
+    <string name="action_shuffle">Shuffle</string>
+    <string name="action_open_url">Open URL</string>
+    <string name="action_open_doc">Open document</string>
+    <string name="action_pick_file">Pick file</string>
+    <string name="action_pick_file_old">Pick file (legacy)</string>
+    <string name="action_external_storage">External storage</string>
+    <string name="action_toggle_filter">Toggle filter</string>
+    <string name="pref_persist_filters_title">Persist filters</string>
+    <string name="pref_persist_sub_filters_title">Persist subtitle settings</string>
+    <string name="dialog_persist_sub_filters_summary">Keep your current subtitle tweaks for the next file.</string>
+
+    <!-- Subtitle picker controls -->
+    <string name="btn_sub_scale">Subtitle size</string>
+    <string name="btn_sub_scale_summary">Scale rendered subtitles up or down.</string>
+    <string name="btn_sub_pos">Vertical position</string>
+    <string name="btn_sub_pos_summary" formatted="false">Place the bottom subs anywhere from top (0%) to bottom (100%).</string>
+    <string name="btn_secondary_pos">Top sub position</string>
+    <string name="btn_secondary_pos_summary" formatted="false">Place the top subs anywhere from top (0%) to bottom (100%).</string>
+    <string name="btn_secondary_sub">Secondary track</string>
+    <string name="btn_secondary_sub_summary">Show a second subtitle track above the primary one.</string>
+    <string name="btn_secondary_sub_swap">Swap primary / secondary</string>
+    <string name="status_swapped">Swapped</string>
+
+    <!-- Subtitle preset labels -->
+    <string name="sub_scale_default">Default</string>
+    <string name="sub_pos_default">Default</string>
+    <string name="sub_secondary_unavailable">Unavailable</string>
+
+    <!-- Subtitle style customizer -->
+    <string name="sub_style_title">Subtitle style</string>
+    <string name="sub_style_preview_text">The quick brown fox</string>
+    <string name="sub_style_row_summary">Colors, outline, background, and font.</string>
+    <string name="sub_style_summary">Customize how subtitles look. Applies to text subtitles; advanced (ASS) subtitles only change when override is on.</string>
+    <string name="sub_style_use_custom">Use custom subtitle style</string>
+    <string name="sub_style_text_color">Text color</string>
+    <string name="sub_style_text_color_summary">Color of the subtitle text.</string>
+    <string name="sub_style_text_opacity">Text opacity</string>
+    <string name="sub_style_text_opacity_summary">How solid the text appears.</string>
+    <string name="sub_style_edge">Edge style</string>
+    <string name="sub_style_edge_summary">Outline or drop shadow around the text.</string>
+    <string name="sub_style_edge_none">None</string>
+    <string name="sub_style_edge_outline">Outline</string>
+    <string name="sub_style_edge_shadow">Drop shadow</string>
+    <string name="sub_style_outline_color">Outline color</string>
+    <string name="sub_style_outline_color_summary">Color of the text outline.</string>
+    <string name="sub_style_outline_size">Outline thickness</string>
+    <string name="sub_style_outline_size_summary">Thickness of the outline.</string>
+    <string name="sub_style_bg_opacity">Background opacity</string>
+    <string name="sub_style_bg_opacity_summary">Solid box behind the text.</string>
+    <string name="sub_style_bg_color">Background color</string>
+    <string name="sub_style_bg_color_summary">Color of the background box.</string>
+    <string name="sub_style_font">Font</string>
+    <string name="sub_style_font_summary">Typeface used for subtitles.</string>
+    <string name="sub_style_add_font">Add font…</string>
+    <string name="sub_style_add_font_summary">Import a .ttf or .otf file to use as a subtitle font.</string>
+    <string name="sub_style_font_added">Font added</string>
+    <string name="sub_style_remove_font">Remove font…</string>
+    <string name="sub_style_remove_font_summary">Delete a font you imported. Bundled fonts can\'t be removed.</string>
+    <string name="sub_style_font_removed">Font removed</string>
+    <string name="sub_style_no_user_fonts">No imported fonts to remove.</string>
+    <string name="sub_style_blur">Outline blur</string>
+    <string name="sub_style_blur_summary">Soften the subtitle edges with a Gaussian blur.</string>
+    <string name="sub_style_shadow_size">Shadow distance</string>
+    <string name="sub_style_shadow_size_summary">How far the drop shadow falls. Needs the Drop shadow edge style.</string>
+    <string name="sub_style_shadow_color">Shadow color</string>
+    <string name="sub_style_shadow_color_summary">Color of the drop shadow.</string>
+    <string name="sub_style_spacing">Letter spacing</string>
+    <string name="sub_style_spacing_summary">Extra space between characters.</string>
+    <string name="sub_style_justify">Justify</string>
+    <string name="sub_style_justify_summary">How multi-line subtitles are aligned.</string>
+    <string name="sub_style_justify_auto">Auto</string>
+    <string name="sub_style_justify_left">Left</string>
+    <string name="sub_style_justify_center">Center</string>
+    <string name="sub_style_justify_right">Right</string>
+    <string name="sub_style_bold">Bold</string>
+    <string name="sub_style_bold_summary">Render subtitles in bold.</string>
+    <string name="sub_style_italic">Italic</string>
+    <string name="sub_style_italic_summary">Render subtitles in italics. Uses the font\'s real italic face when available.</string>
+    <string name="sub_style_save_preset">Save as preset</string>
+    <string name="sub_style_save_preset_summary">Save the current look as a named preset.</string>
+    <string name="sub_style_apply_preset">Apply preset</string>
+    <string name="sub_style_apply_preset_summary">Load a saved preset.</string>
+    <string name="sub_style_edit_preset">Edit preset</string>
+    <string name="sub_style_edit_preset_summary">Load a preset to tweak, then Save to update it.</string>
+    <string name="sub_style_preset">Preset</string>
+    <string name="sub_style_preset_summary">Cycle through your saved presets.</string>
+    <string name="sub_style_preset_none">None</string>
+    <string name="sub_style_preset_editing">Editing preset: %s</string>
+    <string name="sub_style_delete_preset">Delete preset</string>
+    <string name="sub_style_delete_preset_summary">Remove a saved preset.</string>
+    <string name="sub_style_preset_saved">Preset saved</string>
+    <string name="sub_style_preset_updated">Preset updated</string>
+    <string name="sub_style_preset_applied">Preset applied</string>
+    <string name="sub_style_preset_removed">Preset removed</string>
+    <string name="sub_style_save_preset_title">Save preset</string>
+    <string name="sub_style_edit_preset_title">Edit preset</string>
+    <string name="sub_style_preset_name_hint">Preset name</string>
+    <string name="sub_style_preset_name_count">%1$d/%2$d</string>
+    <string name="sub_style_preset_include_layout">Also save position and size</string>
+    <string name="sub_style_preset_include_layout_summary">Store the subtitle size and vertical position selected below.</string>
+    <string name="sub_style_preset_name_required">Enter a name for the preset.</string>
+    <string name="sub_style_override_ass">Apply to advanced (ASS) subtitles</string>
+    <string name="sub_style_override_ass_summary">Force this style onto ASS/SSA subtitles. May change signs and typesetting.</string>
+    <string name="sub_style_force_all_ass">Force on all subtitles</string>
+    <string name="sub_style_force_all_ass_summary">Strips the subtitle\'s own styling so your style applies everywhere. Use if Apply doesn\'t change them. Removes signs and positioning.</string>
+    <string name="sub_style_selective_ass">Keep signs &amp; typesetting</string>
+    <string name="sub_style_selective_ass_summary">Restyle dialogue only. Bold/Italic can also affect signs that share the dialogue style.</string>
+
+    <!-- App chrome -->
+    <string name="tv_brand">mpvNova</string>
+    <string name="tv_launcher_tagline">Android TV playback</string>
+    <string name="home_hero_body">Open local files, document folders, or stream URLs.</string>
+    <string name="home_remember_hint">Open this source automatically next time.</string>
+    <string name="file_picker_title">Media library</string>
+    <string name="file_picker_subtitle">Browse folders, pick media, or switch to document access.</string>
+    <string name="file_picker_choice_subtitle">Choose a file source.</string>
+    <string name="settings_hero_title">Settings</string>
+    <string name="settings_root_subtitle">Playback, video, interface, and advanced options.</string>
+    <string name="about_hero_title">Version and capability info</string>
+    <string name="about_hero_subtitle">Inspect the bundled playback core, enabled features, and runtime details.</string>
+    <string name="tv_tile_open_folder">Open Folder</string>
+    <string name="tv_tile_open_folder_sub">Grant access to a document tree</string>
+    <string name="tv_tile_open_url">Open URL</string>
+    <string name="tv_tile_open_url_sub">Paste a stream or media link</string>
+    <string name="tv_tile_storage">Storage</string>
+    <string name="tv_tile_storage_sub">Browse local storage directly</string>
+    <string name="tv_tile_settings">Settings</string>
+    <string name="tv_tile_settings_sub">Playback, video, and controls</string>
+    <string name="document_picker_unavailable">This device does not include a document picker. Use Storage instead.</string>
+    <string name="storage_browser_unavailable">No readable storage was found. If this is a USB drive, Android may not have mounted it.</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_header_appearance">Appearance</string>
+    <string name="pref_header_appearance_summary">Color theme for the home screen, settings, and player controls.</string>
+
+    <string name="pref_header_general">General</string>
+    <string name="pref_header_general_summary">Languages, defaults, background playback, and startup behavior.</string>
+
+    <string name="pref_header_video">Video</string>
+    <string name="pref_header_video_summary">Scaling, interpolation, debanding, and decode quality.</string>
+
+    <string name="pref_header_ui">Player UI</string>
+    <string name="pref_header_ui_summary">Controls, titles, popups, and playlist confirmations.</string>
+
+    <string name="pref_header_developer">Developer</string>
+    <string name="pref_header_developer_summary">Stats overlays, audio focus handling, and debugging tools.</string>
+
+    <string name="pref_header_advanced">Advanced</string>
+    <string name="pref_header_advanced_summary">Renderer switches and direct access to config files.</string>
+    <string name="pref_header_support">Support &amp; diagnostics</string>
+    <string name="pref_header_support_summary">Copy device details and export a support bundle.</string>
+
+    <string name="pref_header_about_mpv">About mpvNova</string>
+    <string name="pref_header_about_mpv_summary">See build details and bundled playback-core features.</string>
+
+    <string name="pref_check_updates_title">App updates</string>
+    <string name="pref_check_updates_summary">Check GitHub releases, download the latest APK, and hand it to Android\'s installer.</string>
+    <string name="pref_release_history_title">Release notes history</string>
+    <string name="pref_release_history_summary">View recently fetched mpvNova changelogs again.</string>
+    <string name="update_available_title">App Update</string>
+    <string name="update_checking">Checking for the latest release...</string>
+    <string name="update_new_version">New version: %1$s</string>
+    <string name="update_notes_heading">Fixes and improvements</string>
+    <string name="update_notes_empty">No release notes were provided.</string>
+    <string name="update_close">Close</string>
+    <string name="update_download">Download</string>
+    <string name="update_ignore">Ignore</string>
+    <string name="update_current_title">mpvNova is up to date</string>
+    <string name="update_current_message">You are already running %1$s.</string>
+    <string name="update_error_title">Update check failed</string>
+    <string name="update_check_failed">Couldn\'t check for updates.\n\n%1$s</string>
+    <string name="update_downloading">Downloading %1$s...</string>
+    <string name="update_download_complete_title">Update downloaded</string>
+    <string name="update_download_complete">Download complete. Ready to install %1$s.\n\nFile: %2$s</string>
+    <string name="update_install">Install</string>
+    <string name="update_download_failed">Couldn\'t download the update.\n\n%1$s</string>
+    <string name="update_download_missing">The downloaded APK could not be found.</string>
+    <string name="update_installer_missing">Android could not open the package installer.\n\n%1$s</string>
+    <string name="update_install_permission_title">Allow app installs</string>
+    <string name="update_install_permission_message">Android needs permission before mpvNova can open a downloaded APK. Turn on \"Allow from this source\", then return here and the installer will open.</string>
+    <string name="update_open_permission_settings">Open settings</string>
+    <string name="update_history_title">Release notes history</string>
+    <string name="update_history_empty">No release notes have been fetched yet. Check for updates once, then they will appear here.</string>
+    <string name="update_history_unknown_version">Unknown version</string>
+
+    <string name="pref_default_file_manager_path_title">Default file manager path</string>
+
+    <string name="pref_material_you_theming_title">Material You</string>
+    <string name="pref_material_you_theming_summary">Use dynamic colors</string>
+    <string name="appearance_color_theme_title">Color Theme</string>
+    <string name="appearance_color_theme_summary">Pick the accent color used across the app</string>
+    <string name="appearance_theme_white">White</string>
+    <string name="appearance_theme_crimson">Crimson</string>
+    <string name="appearance_theme_ocean">Ocean</string>
+    <string name="appearance_theme_cyan">Cyan</string>
+    <string name="appearance_theme_violet">Violet</string>
+    <string name="appearance_theme_emerald">Emerald</string>
+    <string name="appearance_theme_lime">Lime</string>
+    <string name="appearance_theme_amber">Amber</string>
+    <string name="appearance_theme_gold">Gold</string>
+    <string name="appearance_theme_copper">Copper</string>
+    <string name="appearance_theme_indigo">Indigo</string>
+    <string name="appearance_theme_rose">Rose</string>
+    <string name="appearance_theme_slate">Slate</string>
+    <string name="appearance_theme_chrome">Chrome</string>
+    <string name="appearance_theme_oyster">Oyster</string>
+    <string name="appearance_theme_ivory">Ivory</string>
+    <string name="appearance_amoled_mode_title">AMOLED Mode</string>
+    <string name="appearance_amoled_mode_summary">Use pure black for app backgrounds</string>
+    <string name="appearance_pure_black_surfaces_title">Pure Black Surfaces</string>
+    <string name="appearance_pure_black_surfaces_summary">Also make cards, panels, and containers pure black</string>
+
+    <string name="pref_default_audio_language_title">Default audio language</string>
+    <string name="pref_default_audio_language_message">Audio language(s) to be selected by default when playing a video with multiple audio streams.\nTwo- or three-letter languages codes work. Multiple values can be delimited by comma.</string>
+
+    <string name="pref_default_subtitle_language_title">Default subtitle language</string>
+    <string name="pref_default_subtitle_language_message">Subtitle language(s) to be selected by default when playing a video with multiple subtitles.\nTwo- or three-letter languages codes work. Multiple values can be delimited by comma.</string>
+
+    <string name="pref_hardware_decoding_title">Hardware decoding</string>
+    <string name="pref_hardware_decoding_summary">Attempt hardware decoding before falling back to software. This is generally more efficient.</string>
+    <string name="pref_decoder_auto_fallback_title">Automatic decoder fallback</string>
+    <string name="pref_decoder_auto_fallback_summary">Let mpvNova temporarily override your preferred decoder for known trouble cases.</string>
+    <string name="pref_shield_decoder_mode_title">Shield decoder mode</string>
+    <string name="pref_shield_decoder_mode_summary">Use a Shield-specific fallback for Hi10P H.264. Turn off to keep the normal decoder modes only.</string>
+    <string name="pref_shield_decoder_fallback_title">Shield Hi10P fallback</string>
+    <string name="pref_shield_decoder_fallback_summary">All options software-decode Hi10P H.264 — no hardware can decode it — they differ only in how far the tuning goes.</string>
+    <string name="shield_fallback_default_title">G-NEXT SW — no tuning</string>
+    <string name="shield_fallback_default_desc">Strictly stock playback: software decode through the standard G-NEXT path with no extra tweaks.</string>
+    <string name="shield_fallback_light_title">G-NEXT SW — light tuning</string>
+    <string name="shield_fallback_light_desc">Skips the deblocking filter on non reference frames (big CPU saving, minor quality cost), uses a 1 second audio buffer, and upscales with Lanczos sharp. Not always recommended. Some Hi10P streams get major AV sync or framedrop issues with this. If that happens, switch back to no tuning and/or restart your Shield.</string>
+    <string name="shield_fallback_framedrop_title">G-NEXT SW frame drop tuning</string>
+    <string name="shield_fallback_framedrop_desc">Light tuning plus frame dropping: when the Shield\'s audio clock slips and video starts drifting out of sync, the player drops late frames to stay in sync instead of drifting until you reboot. Use this if audio and video desync over time. Not always recommended. Some Hi10P streams get major AV sync or framedrop issues with this. If that happens, switch back to no tuning and/or restart your Shield.</string>
+    <string name="pref_autopause_controls_overlay_title">Pause when controls show</string>
+    <string name="pref_autopause_controls_overlay_summary">Automatically pause playback while the controls overlay is visible, so navigating doesn\'t fight the decoder for CPU. Applies to every file.</string>
+    <string name="pref_autopause_shield_hi10p_title">Pause Hi10P on Shield</string>
+    <string name="pref_autopause_shield_hi10p_summary">On Shield devices, automatically pause playback while the controls overlay is visible during Hi10P H.264 files (where the SW decoder is too tight to share CPU with the UI). Independent of the general option above — turn off if you\'d rather accept some A/V drift to keep video running.</string>
+    <string name="pref_preferred_decoder_mode_title">Preferred decoder mode</string>
+    <string name="pref_preferred_decoder_mode_summary">Choose the decoder mode to use by default when automatic decoder fallback is off.</string>
+
+    <string name="pref_background_play_title">Background playback</string>
+    <string name="pref_background_play_summary">Decide when playback should be automatically resumed background.</string>
+    <string name="pref_background_play_default" translatable="false">never</string>
+
+    <string name="pref_save_position_title">Save position on quit</string>
+    <string name="pref_save_position_summary">Remember current playback position on exit. When the same file is played again, the player will seek to the previous position.</string>
+
+    <string name="pref_new_intent_replace_title">Play new files immediately</string>
+    <string name="pref_new_intent_replace_summary">When opening new files while the player is in background, replace the current playlist instead of adding at end.</string>
+
+    <string name="pref_display_media_title_title">Display media title (videos)</string>
+    <string name="pref_display_media_title_summary">Display a VLC-style media title at the top of the player UI when the launcher or file path provides one.</string>
+
+    <string name="pref_bottom_controls_title">Show controls at bottom of screen</string>
+    <string name="pref_bottom_controls_summary">When on, the player controls dock to the bottom of the screen. When off, they float as a centered overlay above the bottom edge.</string>
+    <string name="pref_ui_scale_title">UI scale</string>
+    <string name="pref_ui_scale_summary">Size of the on-screen interface. Lower is smaller, higher is bigger. Applies on every device regardless of its display density.</string>
+    <string name="pref_player_controls_timeout_title">Auto-hide player controls</string>
+    <string name="pref_player_controls_timeout_summary">Choose how long controls stay visible after player UI activity.</string>
+    <string name="pref_player_controls_timeout_default" translatable="false">5000</string>
+    <string name="pref_keep_controls_visible_paused_title">Keep controls visible while paused</string>
+    <string name="pref_keep_controls_visible_paused_summary">When playback is paused, keep the player controls on screen until playback resumes or you hide them manually.</string>
+    <string name="pref_remote_next_chapter_button_title">Remote button for next chapter</string>
+    <string name="pref_remote_next_chapter_capture_message">Press the remote button to use for next chapter. Press Back to cancel.</string>
+    <string name="pref_remote_next_chapter_reserved_button">That button is reserved. Choose another remote button.</string>
+    <string name="pref_remote_button_unassigned">Not set</string>
+    <string name="pref_remote_button_unassigned_value" translatable="false">off</string>
+    <string name="remember_video_adjustment">Remember choice</string>
+    <string name="remember_video_adjustment_summary">Use this value automatically when playback starts.</string>
+    <string name="pref_reset_player_ui_title">Reset player UI settings</string>
+    <string name="pref_reset_player_ui_summary">Restore player controls, title, popup, and playlist UI preferences without changing playback, audio, or subtitle settings.</string>
+
+    <string name="pref_no_ui_pause_title">Continue playback during UI popups</string>
+    <string name="pref_no_ui_pause_summary">Continue playback while popups are open. (e.g. during the playlist dialog)</string>
+    <string name="pref_no_ui_pause_default" translatable="false">audio-only</string>
+
+    <string name="pref_playlist_exit_warning_title">Playlist exit confirmation</string>
+    <string name="pref_playlist_exit_warning_summary">Show a confirmation dialog before exiting when a playlist is loaded.</string>
+
+    <string name="pref_video_upscale_title">Upscaling filter</string>
+
+    <string name="pref_video_downscale_title">Downscaling filter</string>
+
+    <string name="pref_video_debanding_title">Debanding</string>
+    <string name="pref_video_debanding_summary">Select video debanding mode.</string>
+
+    <string name="pref_video_interpolation_title">Interpolation</string>
+    <string name="pref_video_interpolation_message">Reduce judder caused by mismatched video FPS and display refresh rate.</string>
+    <string name="pref_video_interpolation_sync_default" translatable="false">audio</string>
+
+    <string name="pref_video_tscale_title">Temporal interpolation filter</string>
+    <string name="pref_video_tscale_summary">Select the filter used for interpolating the temporal axis (frames).</string>
+    <string name="pref_video_tscale_message">These settings only take effect if interpolation is enabled above.</string>
+
+    <string name="pref_video_fastdecode_title">Low-quality video decoding</string>
+    <string name="pref_video_fastdecode_summary">Trades quality for performance and thus fluent playback.\n<b>REDUCES QUALITY A LOT</b></string>
+
+    <string name="pref_ignore_audio_focus_title">Ignore audio focus</string>
+    <string name="pref_ignore_audio_focus_summary">Do not pause playback or reduce volume when other applications play audio at the same time.</string>
+
+    <string name="pref_stats_mode_title">Show stats</string>
+    <string name="pref_stats_mode_summary">Choose which statistics are displayed</string>
+
+    <string name="pref_gpu_debug_title">Enable OpenGL debugging</string>
+    <string name="pref_copy_debug_info_title">Copy debug info</string>
+    <string name="pref_copy_debug_info_summary">Copy app, mpv, FFmpeg, Android, device, and decoder details for support posts.</string>
+    <string name="pref_export_config_bundle_title">Export config bundle</string>
+    <string name="pref_export_config_bundle_summary">Share mpv.conf, input.conf, diagnostics, and selected settings as a zip file.</string>
+    <string name="support_debug_info_title">mpvNova debug info</string>
+    <string name="support_debug_info_copied">Debug info copied</string>
+    <string name="support_export_chooser">Export mpvNova support bundle</string>
+    <string name="support_export_no_target">No app can export the support bundle</string>
+    <string name="support_export_save_downloads">Save to Downloads</string>
+    <string name="support_export_share_localsend">Send with LocalSend</string>
+    <string name="support_export_share_other">Share with another app</string>
+    <string name="support_export_share_target_title">Share support bundle</string>
+    <string name="support_export_saved">Saved to Downloads: %1$s</string>
+    <string name="support_export_save_failed">Couldn\'t save the support bundle</string>
+    <string name="support_export_share_failed">Couldn\'t open that share target</string>
+    <string name="support_reset_player_ui_done">Player UI settings reset</string>
+
+    <string name="pref_gpu_next_title">Use gpu-next</string>
+    <string name="pref_gpu_next_summary">Use new video rendering backend, based on libplacebo.</string>
+    <string name="toast_gpu_next_copy_fallback">gpu-next render path failed. Retrying with gpu-next + mediacodec-copy.</string>
+    <string name="toast_gpu_next_fallback">gpu-next render path failed on this video. Switched to classic gpu renderer.</string>
+
+    <string name="pref_edit_mpv_conf">Edit mpv.conf</string>
+    <string name="pref_edit_mpv_conf_message">You can directly edit the advanced playback configuration here.</string>
+
+    <string name="pref_edit_input_conf">Edit input.conf</string>
+    <string name="pref_edit_input_conf_message">You can edit input.conf here, which is mainly useful for TV remotes and keyboards.\n\nImportant: this player still has a few hardcoded keys which can\'t be redefined here, for example \'j\' to cycle subtitles.</string>
+
+    <!-- Strings used in Settings dialog preferences -->
+    <string name="scaler_filter">Filter function</string>
+    <string name="scaler_param1">Param 1</string>
+    <string name="scaler_param2">Param 2</string>
+    <string name="interpolation_switch">Enable interpolation</string>
+    <string name="interpolation_video_sync">Video sync</string>
+
+    <!-- File picker -->
+    <string name="nnf_name">Name</string>
+    <string name="nnf_permission_external_write_denied">Permission to access file system denied</string>
+
+    <!-- Player settings drawer (in-player gear icon -> right-side panel).
+         Tabs group the existing top-menu and advanced-menu options into
+         categories so users do not have to remember which dialog hides
+         which feature. -->
+    <string name="action_pip">Picture-in-picture</string>
+    <string name="drawer_tab_video">Video</string>
+    <string name="drawer_tab_audio">Audio</string>
+    <string name="drawer_tab_subtitles">Subtitles</string>
+    <string name="drawer_tab_playback">Playback</string>
+    <string name="drawer_tab_interface">Interface</string>
+    <string name="drawer_section_video">Video</string>
+    <string name="drawer_section_audio">Audio</string>
+    <string name="drawer_section_subtitles">Subtitles</string>
+    <string name="drawer_section_playback">Playback</string>
+    <string name="drawer_section_interface">Interface</string>
+    <!-- Drawer action labels for the entries that open dedicated pickers. -->
+    <!-- Shorter label for the drawer Video tab where two buttons share a row;
+         the full "Video brightness" wraps to two lines and breaks alignment
+         with the adjacent Contrast button. -->
+    <string name="btn_brightness">Brightness</string>
+    <string name="btn_sub_track">Subtitle track &amp; size</string>
+    <string name="btn_sub_seek_prev">Previous subtitle</string>
+    <string name="btn_sub_seek_next">Next subtitle</string>
+    <string name="btn_chapter_prev">Previous chapter</string>
+    <string name="btn_chapter_next">Next chapter</string>
+
+    <!-- Drawer Video tab: Take Screenshot action label + save toast. -->
+    <string name="btn_screenshot">Screenshot</string>
+    <string name="toast_screenshot_saved">Saved to Pictures</string>
+    <string name="btn_play_speed">Playback speed</string>
+    <string name="btn_decoder">Decoder</string>
+    <string name="btn_audio_filters">Audio filters &amp; track</string>
+
+    <!-- Android TV playback controls. -->
+    <string name="pref_exit_with_double_back_title">Exit with double back press</string>
+    <string name="pref_exit_with_double_back_summary">Require pressing Back twice within two seconds to exit the player. Helps prevent accidental TV-remote exits during playback.</string>
+    <string name="exit_double_back_hint">Press Back again to exit</string>
+
+    <string name="pref_display_clock_overlay_title">Show clock overlay</string>
+    <string name="pref_display_clock_overlay_summary">Display the current time and \"ends at\" estimate at the top-left when the player controls are visible.</string>
+
+    <string name="pref_dpad_up_jumps_top_title">D-pad up jumps to top controls</string>
+    <string name="pref_dpad_up_jumps_top_summary">When on, pressing Up from the seekbar jumps to the top-right PiP / Settings icons instead of hiding the overlay. When off (default), pressing Up from the seekbar hides the overlay.</string>
+    <string name="pref_hide_controls_while_seeking_title">Hide controls while seeking</string>
+    <string name="pref_hide_controls_while_seeking_summary">When on, pressing Left / Right seeks without opening the player controls. Up, Down and OK still bring them up.</string>
+    <string name="pref_minimal_seekbar_while_seeking_title">Minimal seekbar while seeking</string>
+    <string name="pref_minimal_seekbar_while_seeking_summary">When on, pressing Left / Right shows only a slim seekbar with the time instead of the full controls.</string>
+</resources>

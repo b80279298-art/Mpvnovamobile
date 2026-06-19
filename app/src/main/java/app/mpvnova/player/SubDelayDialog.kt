@@ -1,0 +1,72 @@
+package app.mpvnova.player
+
+import app.mpvnova.player.databinding.DialogDecimalBinding
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.EditText
+import androidx.core.view.isVisible
+import androidx.core.widget.addTextChangedListener
+
+internal class SubDelayDialog(
+    private val rangeMin: Double, private val rangeMax: Double
+) {
+    private lateinit var binding: DialogDecimalBinding
+
+    fun buildView(layoutInflater: LayoutInflater): View {
+        if (::binding.isInitialized) {
+            binding.root.detachFromParent()
+            return binding.root
+        }
+        binding = DialogDecimalBinding.inflate(layoutInflater)
+
+        binding.editText.addTextChangedListener(afterTextChanged = { text ->
+            handleTextChange(text?.toString(), binding.editText)
+        })
+        binding.editText2.addTextChangedListener(afterTextChanged = { text ->
+            handleTextChange(text?.toString(), binding.editText2)
+        })
+        val onClick1 = { delta: Double ->
+            val value = this.delay1 ?: 0.0
+            this.delay1 = (value + delta).coerceIn(rangeMin, rangeMax)
+        }
+        val onClick2 = { delta: Double ->
+            val value = this.delay2 ?: 0.0
+            this.delay2 = (value + delta).coerceIn(rangeMin, rangeMax)
+        }
+        binding.btnMinus.setOnClickListener { onClick1(-STEP) }
+        binding.btnPlus.setOnClickListener { onClick1(STEP) }
+        binding.btnMinus2.setOnClickListener { onClick2(-STEP) }
+        binding.btnPlus2.setOnClickListener { onClick2(STEP) }
+
+        return binding.root
+    }
+
+    private fun handleTextChange(s: String?, editText: EditText) {
+        val value = s?.toDoubleOrNull() ?: return
+        val valueBounded = value.coerceIn(rangeMin, rangeMax)
+        if (valueBounded != value)
+            editText.setText(formatDelayForField(valueBounded))
+    }
+
+    /** Primary sub delay */
+    var delay1: Double?
+        set(v) = binding.editText.setText(v?.let(::formatDelayForField).orEmpty())
+        get() = binding.editText.text.toString().toDoubleOrNull()
+
+    /**
+     * Secondary sub delay. Set to null to hide related UI parts.
+     */
+    var delay2: Double?
+        set(v) {
+            arrayOf(binding.label1, binding.label2, binding.rowSecondary).forEach {
+                it.isVisible = v != null
+            }
+            if (v != null)
+                binding.editText2.setText(formatDelayForField(v))
+        }
+        get() = binding.editText2.text.toString().toDoubleOrNull()
+
+    companion object {
+        private const val STEP = 0.1
+    }
+}

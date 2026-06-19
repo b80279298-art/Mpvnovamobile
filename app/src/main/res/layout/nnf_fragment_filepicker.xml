@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <app.mpvnova.player.TvNativeScrollbarRecyclerView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="8dp"
+        android:clipToPadding="true"
+        android:descendantFocusability="afterDescendants"
+        android:fitsSystemWindows="true"
+        android:focusable="true"
+        android:nextFocusUp="@id/toolbar"
+        android:paddingStart="10dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="12dp"
+        android:scrollbarDefaultDelayBeforeFade="1200"
+        android:scrollbarFadeDuration="240"
+        android:scrollbarSize="3dp"
+        android:scrollbarStyle="insideInset"
+        android:scrollbarThumbVertical="@drawable/bg_tv_scrollbar_thumb"
+        android:scrollbarTrackVertical="@drawable/bg_tv_scrollbar_track"
+        android:scrollbars="vertical"
+        tools:ignore="RtlSymmetry"
+        tools:listitem="@layout/nnf_filepicker_listitem_dir" />
+
+</FrameLayout>

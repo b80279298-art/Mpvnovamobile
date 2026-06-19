@@ -1,0 +1,2095 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="FilePickerTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="nnf_separator_color">@color/tv_stroke_strong</item>
+        <item name="colorPrimary">@color/tv_purple</item>
+        <item name="colorPrimaryDark">@color/tv_purple_deep</item>
+        <item name="colorAccent">@color/tv_purple_hot</item>
+        <item name="mpvAccent">@color/tv_purple</item>
+        <item name="mpvAccentHot">@color/tv_purple_hot</item>
+        <item name="mpvAccentDeep">@color/tv_purple_deep</item>
+        <item name="mpvAccentInk">@color/tv_purple_ink</item>
+        <item name="mpvTextOnAccent">@color/tv_text_on_accent</item>
+        <item name="mpvFilterActiveIcon">@color/tv_filter_active_icon</item>
+        <item name="mpvWindowStart">#FF101216</item>
+        <item name="mpvWindowCenter">#FF090B0E</item>
+        <item name="mpvWindowEnd">#FF040506</item>
+        <item name="mpvWindowGlowStart">#22FFFFFF</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#16D8DDE3</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">@color/tv_surface</item>
+        <item name="mpvSurfaceEnd">#E6151E2B</item>
+        <item name="mpvSurfaceAltStart">#68171C23</item>
+        <item name="mpvSurfaceAltEnd">#52101418</item>
+        <item name="mpvSurfaceSoft">@color/tv_surface_soft</item>
+        <item name="mpvSurfaceStrongStart">#DA141D2A</item>
+        <item name="mpvSurfaceStrongEnd">#D20D131C</item>
+        <item name="mpvHeroStart">#CF1A2736</item>
+        <item name="mpvHeroEnd">#C20D141E</item>
+        <item name="mpvOverlayStart">#B812161B</item>
+        <item name="mpvOverlayCenter">#AA111418</item>
+        <item name="mpvOverlayEnd">#A00C0E12</item>
+        <item name="mpvChipStart">#14FFFFFF</item>
+        <item name="mpvChipEnd">#0DFFFFFF</item>
+        <item name="mpvStroke">@color/tv_stroke</item>
+        <item name="mpvStrokeStrong">@color/tv_stroke_strong</item>
+        <item name="mpvStrokeFocus">@color/tv_stroke_focus</item>
+        <item name="mpvFocusWash">@color/tv_focus_wash</item>
+        <item name="mpvFocusWashSoft">@color/tv_focus_wash_soft</item>
+        <item name="colorSurface">@color/tv_charcoal</item>
+        <item name="colorSurfaceVariant">@color/tv_surface_alt</item>
+        <item name="colorOnSurface">@color/tv_text</item>
+        <item name="colorOnSurfaceVariant">@color/tv_text_dim</item>
+        <item name="colorOutline">@color/tv_stroke_strong</item>
+        <item name="android:textColorPrimary">@color/tv_text</item>
+        <item name="android:textColorSecondary">@color/tv_text_dim</item>
+        <item name="android:textColorLink">?attr/mpvAccentHot</item>
+        <item name="android:windowBackground">@drawable/bg_tv_launcher</item>
+        <item name="alertDialogTheme">@style/FilePickerTheme.AlertDialog</item>
+        <item name="android:alertDialogTheme">@style/FilePickerTheme.AlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.Preference.AlertDialog</item>
+        <item name="materialToolbarStyle">@style/AppTheme.Toolbar.Style</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial" parent="FilePickerTheme">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerTheme.Ocean" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF1E88E5</item>
+        <item name="colorPrimaryDark">#FF1565C0</item>
+        <item name="colorAccent">#FF42A5F5</item>
+        <item name="mpvAccent">#FF1E88E5</item>
+        <item name="mpvAccentHot">#FF42A5F5</item>
+        <item name="mpvAccentDeep">#FF1565C0</item>
+        <item name="mpvFilterActiveIcon">#FF42A5F5</item>
+        <item name="mpvStrokeFocus">#FF42A5F5</item>
+        <item name="mpvFocusWash">#2E1E88E5</item>
+        <item name="mpvFocusWashSoft">#181E88E5</item>
+        <item name="mpvWindowStart">#FF06111A</item>
+        <item name="mpvWindowCenter">#FF03080D</item>
+        <item name="mpvWindowEnd">#FF020304</item>
+        <item name="mpvWindowGlowStart">#332186D9</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#1C42A5F5</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0A1A29</item>
+        <item name="mpvSurfaceEnd">#E607111C</item>
+        <item name="mpvSurfaceAltStart">#7010202F</item>
+        <item name="mpvSurfaceAltEnd">#54101A25</item>
+        <item name="mpvSurfaceSoft">#142A8FDB</item>
+        <item name="mpvSurfaceStrongStart">#DE0D1F30</item>
+        <item name="mpvSurfaceStrongEnd">#D2091522</item>
+        <item name="mpvHeroStart">#D0162F46</item>
+        <item name="mpvHeroEnd">#C2071420</item>
+        <item name="mpvOverlayStart">#B80A1722</item>
+        <item name="mpvOverlayCenter">#AA08111A</item>
+        <item name="mpvOverlayEnd">#A0050A10</item>
+        <item name="mpvChipStart">#1E42A5F5</item>
+        <item name="mpvChipEnd">#122A8FDB</item>
+        <item name="mpvStroke">#2A8BC9FF</item>
+        <item name="mpvStrokeStrong">#4AA7D5FF</item>
+    </style>
+
+    <style name="FilePickerTheme.Crimson" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFE53935</item>
+        <item name="colorPrimaryDark">#FFC62828</item>
+        <item name="colorAccent">#FFFF5252</item>
+        <item name="mpvAccent">#FFE53935</item>
+        <item name="mpvAccentHot">#FFFF5252</item>
+        <item name="mpvAccentDeep">#FFC62828</item>
+        <item name="mpvFilterActiveIcon">#FFFF5252</item>
+        <item name="mpvStrokeFocus">#FFFF5252</item>
+        <item name="mpvFocusWash">#2EE53935</item>
+        <item name="mpvFocusWashSoft">#18E53935</item>
+        <item name="mpvWindowStart">#FF1A0709</item>
+        <item name="mpvWindowCenter">#FF0D0406</item>
+        <item name="mpvWindowEnd">#FF050203</item>
+        <item name="mpvWindowGlowStart">#35E53935</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#1EFF5252</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA250D10</item>
+        <item name="mpvSurfaceEnd">#E6110708</item>
+        <item name="mpvSurfaceAltStart">#70311416</item>
+        <item name="mpvSurfaceAltEnd">#541C0C0E</item>
+        <item name="mpvSurfaceSoft">#14E53935</item>
+        <item name="mpvSurfaceStrongStart">#DE321014</item>
+        <item name="mpvSurfaceStrongEnd">#D216090B</item>
+        <item name="mpvHeroStart">#D0451519</item>
+        <item name="mpvHeroEnd">#C218090C</item>
+        <item name="mpvOverlayStart">#B8240B0E</item>
+        <item name="mpvOverlayCenter">#AA160709</item>
+        <item name="mpvOverlayEnd">#A0080304</item>
+        <item name="mpvChipStart">#1EFF5252</item>
+        <item name="mpvChipEnd">#12E53935</item>
+        <item name="mpvStroke">#2AFF8A8A</item>
+        <item name="mpvStrokeStrong">#4AFFA3A3</item>
+    </style>
+
+    <style name="FilePickerTheme.Violet" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF8E24AA</item>
+        <item name="colorPrimaryDark">#FF6A1B9A</item>
+        <item name="colorAccent">#FFAB47BC</item>
+        <item name="mpvAccent">#FF8E24AA</item>
+        <item name="mpvAccentHot">#FFAB47BC</item>
+        <item name="mpvAccentDeep">#FF6A1B9A</item>
+        <item name="mpvFilterActiveIcon">#FFAB47BC</item>
+        <item name="mpvStrokeFocus">#FFAB47BC</item>
+        <item name="mpvFocusWash">#2E8E24AA</item>
+        <item name="mpvFocusWashSoft">#188E24AA</item>
+        <item name="mpvWindowStart">#FF13091A</item>
+        <item name="mpvWindowCenter">#FF0A0510</item>
+        <item name="mpvWindowEnd">#FF040206</item>
+        <item name="mpvWindowGlowStart">#358E24AA</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20AB47BC</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA1F0D29</item>
+        <item name="mpvSurfaceEnd">#E60F0717</item>
+        <item name="mpvSurfaceAltStart">#702A1335</item>
+        <item name="mpvSurfaceAltEnd">#54190920</item>
+        <item name="mpvSurfaceSoft">#148E24AA</item>
+        <item name="mpvSurfaceStrongStart">#DE2E123C</item>
+        <item name="mpvSurfaceStrongEnd">#D2140820</item>
+        <item name="mpvHeroStart">#D03E1950</item>
+        <item name="mpvHeroEnd">#C2150820</item>
+        <item name="mpvOverlayStart">#B8210C2A</item>
+        <item name="mpvOverlayCenter">#AA15071B</item>
+        <item name="mpvOverlayEnd">#A008030B</item>
+        <item name="mpvChipStart">#20AB47BC</item>
+        <item name="mpvChipEnd">#128E24AA</item>
+        <item name="mpvStroke">#2ACB7BE0</item>
+        <item name="mpvStrokeStrong">#4ADAA0EA</item>
+    </style>
+
+    <style name="FilePickerTheme.Emerald" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF43A047</item>
+        <item name="colorPrimaryDark">#FF2E7D32</item>
+        <item name="colorAccent">#FF66BB6A</item>
+        <item name="mpvAccent">#FF43A047</item>
+        <item name="mpvAccentHot">#FF66BB6A</item>
+        <item name="mpvAccentDeep">#FF2E7D32</item>
+        <item name="mpvFilterActiveIcon">#FF66BB6A</item>
+        <item name="mpvStrokeFocus">#FF66BB6A</item>
+        <item name="mpvFocusWash">#2E43A047</item>
+        <item name="mpvFocusWashSoft">#1843A047</item>
+        <item name="mpvWindowStart">#FF07170D</item>
+        <item name="mpvWindowCenter">#FF031007</item>
+        <item name="mpvWindowEnd">#FF010603</item>
+        <item name="mpvWindowGlowStart">#3543A047</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2066BB6A</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0A2411</item>
+        <item name="mpvSurfaceEnd">#E6061209</item>
+        <item name="mpvSurfaceAltStart">#70112E18</item>
+        <item name="mpvSurfaceAltEnd">#540B1B10</item>
+        <item name="mpvSurfaceSoft">#1443A047</item>
+        <item name="mpvSurfaceStrongStart">#DE0E3218</item>
+        <item name="mpvSurfaceStrongEnd">#D208180C</item>
+        <item name="mpvHeroStart">#D0174324</item>
+        <item name="mpvHeroEnd">#C2081A0D</item>
+        <item name="mpvOverlayStart">#B80B2411</item>
+        <item name="mpvOverlayCenter">#AA07160B</item>
+        <item name="mpvOverlayEnd">#A0030804</item>
+        <item name="mpvChipStart">#2066BB6A</item>
+        <item name="mpvChipEnd">#1243A047</item>
+        <item name="mpvStroke">#2A8BE28F</item>
+        <item name="mpvStrokeStrong">#4AA8EBAA</item>
+    </style>
+
+    <style name="FilePickerTheme.Amber" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFFB8C00</item>
+        <item name="colorPrimaryDark">#FFEF6C00</item>
+        <item name="colorAccent">#FFFFA726</item>
+        <item name="mpvAccent">#FFFB8C00</item>
+        <item name="mpvAccentHot">#FFFFA726</item>
+        <item name="mpvAccentDeep">#FFEF6C00</item>
+        <item name="mpvFilterActiveIcon">#FFFFA726</item>
+        <item name="mpvStrokeFocus">#FFFFA726</item>
+        <item name="mpvFocusWash">#2EFB8C00</item>
+        <item name="mpvFocusWashSoft">#18FB8C00</item>
+        <item name="mpvWindowStart">#FF1A1004</item>
+        <item name="mpvWindowCenter">#FF100903</item>
+        <item name="mpvWindowEnd">#FF060301</item>
+        <item name="mpvWindowGlowStart">#38FB8C00</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22FFA726</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A1807</item>
+        <item name="mpvSurfaceEnd">#E6140B03</item>
+        <item name="mpvSurfaceAltStart">#7038200A</item>
+        <item name="mpvSurfaceAltEnd">#54201206</item>
+        <item name="mpvSurfaceSoft">#14FB8C00</item>
+        <item name="mpvSurfaceStrongStart">#DE3B230A</item>
+        <item name="mpvSurfaceStrongEnd">#D21B0F04</item>
+        <item name="mpvHeroStart">#D0502F0D</item>
+        <item name="mpvHeroEnd">#C21C1004</item>
+        <item name="mpvOverlayStart">#B82A1806</item>
+        <item name="mpvOverlayCenter">#AA170D03</item>
+        <item name="mpvOverlayEnd">#A0080401</item>
+        <item name="mpvChipStart">#22FFA726</item>
+        <item name="mpvChipEnd">#12FB8C00</item>
+        <item name="mpvStroke">#2AFFC56B</item>
+        <item name="mpvStrokeStrong">#4AFFD38C</item>
+    </style>
+
+    <style name="FilePickerTheme.Rose" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFD81B60</item>
+        <item name="colorPrimaryDark">#FFC2185B</item>
+        <item name="colorAccent">#FFEC407A</item>
+        <item name="mpvAccent">#FFD81B60</item>
+        <item name="mpvAccentHot">#FFEC407A</item>
+        <item name="mpvAccentDeep">#FFC2185B</item>
+        <item name="mpvFilterActiveIcon">#FFEC407A</item>
+        <item name="mpvStrokeFocus">#FFEC407A</item>
+        <item name="mpvFocusWash">#2ED81B60</item>
+        <item name="mpvFocusWashSoft">#18D81B60</item>
+        <item name="mpvWindowStart">#FF1A0610</item>
+        <item name="mpvWindowCenter">#FF0E0409</item>
+        <item name="mpvWindowEnd">#FF050204</item>
+        <item name="mpvWindowGlowStart">#35D81B60</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20EC407A</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A0A18</item>
+        <item name="mpvSurfaceEnd">#E6140610</item>
+        <item name="mpvSurfaceAltStart">#70361322</item>
+        <item name="mpvSurfaceAltEnd">#541F0A14</item>
+        <item name="mpvSurfaceSoft">#14D81B60</item>
+        <item name="mpvSurfaceStrongStart">#DE3D1125</item>
+        <item name="mpvSurfaceStrongEnd">#D21B0711</item>
+        <item name="mpvHeroStart">#D0501730</item>
+        <item name="mpvHeroEnd">#C21B0711</item>
+        <item name="mpvOverlayStart">#B82A0A18</item>
+        <item name="mpvOverlayCenter">#AA18060E</item>
+        <item name="mpvOverlayEnd">#A0080305</item>
+        <item name="mpvChipStart">#20EC407A</item>
+        <item name="mpvChipEnd">#12D81B60</item>
+        <item name="mpvStroke">#2AFF8CB2</item>
+        <item name="mpvStrokeStrong">#4AFFA8C8</item>
+    </style>
+
+    <style name="FilePickerTheme.Cyan" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF00ACC1</item>
+        <item name="colorPrimaryDark">#FF00838F</item>
+        <item name="colorAccent">#FF26C6DA</item>
+        <item name="mpvAccent">#FF00ACC1</item>
+        <item name="mpvAccentHot">#FF26C6DA</item>
+        <item name="mpvAccentDeep">#FF00838F</item>
+        <item name="mpvFilterActiveIcon">#FF26C6DA</item>
+        <item name="mpvStrokeFocus">#FF26C6DA</item>
+        <item name="mpvFocusWash">#2E00ACC1</item>
+        <item name="mpvFocusWashSoft">#1800ACC1</item>
+        <item name="mpvWindowStart">#FF06191A</item>
+        <item name="mpvWindowCenter">#FF031011</item>
+        <item name="mpvWindowEnd">#FF010607</item>
+        <item name="mpvWindowGlowStart">#3300ACC1</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2026C6DA</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA082326</item>
+        <item name="mpvSurfaceEnd">#E6041113</item>
+        <item name="mpvSurfaceAltStart">#7020383B</item>
+        <item name="mpvSurfaceAltEnd">#54102022</item>
+        <item name="mpvSurfaceSoft">#1400ACC1</item>
+        <item name="mpvSurfaceStrongStart">#DE0A3034</item>
+        <item name="mpvSurfaceStrongEnd">#D205181A</item>
+        <item name="mpvHeroStart">#D00D4248</item>
+        <item name="mpvHeroEnd">#C2051A1D</item>
+        <item name="mpvOverlayStart">#B8082326</item>
+        <item name="mpvOverlayCenter">#AA041517</item>
+        <item name="mpvOverlayEnd">#A0020809</item>
+        <item name="mpvChipStart">#2026C6DA</item>
+        <item name="mpvChipEnd">#1200ACC1</item>
+        <item name="mpvStroke">#2A73E8F2</item>
+        <item name="mpvStrokeStrong">#4A9AF2FA</item>
+    </style>
+
+    <style name="FilePickerTheme.Lime" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF9E9D24</item>
+        <item name="colorPrimaryDark">#FF827717</item>
+        <item name="colorAccent">#FFD4E157</item>
+        <item name="mpvAccent">#FF9E9D24</item>
+        <item name="mpvAccentHot">#FFD4E157</item>
+        <item name="mpvAccentDeep">#FF827717</item>
+        <item name="mpvFilterActiveIcon">#FFD4E157</item>
+        <item name="mpvStrokeFocus">#FFD4E157</item>
+        <item name="mpvFocusWash">#2E9E9D24</item>
+        <item name="mpvFocusWashSoft">#189E9D24</item>
+        <item name="mpvWindowStart">#FF151607</item>
+        <item name="mpvWindowCenter">#FF0D0E04</item>
+        <item name="mpvWindowEnd">#FF050601</item>
+        <item name="mpvWindowGlowStart">#389E9D24</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22D4E157</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA25250A</item>
+        <item name="mpvSurfaceEnd">#E6121205</item>
+        <item name="mpvSurfaceAltStart">#70333313</item>
+        <item name="mpvSurfaceAltEnd">#541D1D09</item>
+        <item name="mpvSurfaceSoft">#149E9D24</item>
+        <item name="mpvSurfaceStrongStart">#DE363610</item>
+        <item name="mpvSurfaceStrongEnd">#D2181807</item>
+        <item name="mpvHeroStart">#D0474614</item>
+        <item name="mpvHeroEnd">#C21A1A08</item>
+        <item name="mpvOverlayStart">#B823230A</item>
+        <item name="mpvOverlayCenter">#AA151506</item>
+        <item name="mpvOverlayEnd">#A0070702</item>
+        <item name="mpvChipStart">#22D4E157</item>
+        <item name="mpvChipEnd">#129E9D24</item>
+        <item name="mpvStroke">#2AE5EF8A</item>
+        <item name="mpvStrokeStrong">#4AF0F7A6</item>
+    </style>
+
+    <style name="FilePickerTheme.Gold" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFFDD835</item>
+        <item name="colorPrimaryDark">#FFF9A825</item>
+        <item name="colorAccent">#FFFFEB3B</item>
+        <item name="mpvAccent">#FFFDD835</item>
+        <item name="mpvAccentHot">#FFFFEB3B</item>
+        <item name="mpvAccentDeep">#FFF9A825</item>
+        <item name="mpvFilterActiveIcon">#FFFFEB3B</item>
+        <item name="mpvStrokeFocus">#FFFFEB3B</item>
+        <item name="mpvFocusWash">#2EFDD835</item>
+        <item name="mpvFocusWashSoft">#18FDD835</item>
+        <item name="mpvWindowStart">#FF171703</item>
+        <item name="mpvWindowCenter">#FF0D0D02</item>
+        <item name="mpvWindowEnd">#FF050500</item>
+        <item name="mpvWindowGlowStart">#38FDD835</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22FFEB3B</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA282407</item>
+        <item name="mpvSurfaceEnd">#E6151304</item>
+        <item name="mpvSurfaceAltStart">#7038320A</item>
+        <item name="mpvSurfaceAltEnd">#54201C06</item>
+        <item name="mpvSurfaceSoft">#14FDD835</item>
+        <item name="mpvSurfaceStrongStart">#DE3C3508</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1703</item>
+        <item name="mpvHeroStart">#D050450A</item>
+        <item name="mpvHeroEnd">#C21D1803</item>
+        <item name="mpvOverlayStart">#B82A2404</item>
+        <item name="mpvOverlayCenter">#AA171303</item>
+        <item name="mpvOverlayEnd">#A0080701</item>
+        <item name="mpvChipStart">#22FFEB3B</item>
+        <item name="mpvChipEnd">#12FDD835</item>
+        <item name="mpvStroke">#2AFFF176</item>
+        <item name="mpvStrokeStrong">#4AFFF59D</item>
+    </style>
+
+    <style name="FilePickerTheme.Copper" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFB87333</item>
+        <item name="colorPrimaryDark">#FF8D4B24</item>
+        <item name="colorAccent">#FFD08A49</item>
+        <item name="mpvAccent">#FFB87333</item>
+        <item name="mpvAccentHot">#FFD08A49</item>
+        <item name="mpvAccentDeep">#FF8D4B24</item>
+        <item name="mpvFilterActiveIcon">#FFD08A49</item>
+        <item name="mpvStrokeFocus">#FFD08A49</item>
+        <item name="mpvFocusWash">#2EB87333</item>
+        <item name="mpvFocusWashSoft">#18B87333</item>
+        <item name="mpvWindowStart">#FF1A0F08</item>
+        <item name="mpvWindowCenter">#FF100905</item>
+        <item name="mpvWindowEnd">#FF060302</item>
+        <item name="mpvWindowGlowStart">#38B87333</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22D08A49</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A180C</item>
+        <item name="mpvSurfaceEnd">#E6140C06</item>
+        <item name="mpvSurfaceAltStart">#70382313</item>
+        <item name="mpvSurfaceAltEnd">#5420140B</item>
+        <item name="mpvSurfaceSoft">#14B87333</item>
+        <item name="mpvSurfaceStrongStart">#DE3D2512</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1008</item>
+        <item name="mpvHeroStart">#D0523218</item>
+        <item name="mpvHeroEnd">#C21D1008</item>
+        <item name="mpvOverlayStart">#B82A180B</item>
+        <item name="mpvOverlayCenter">#AA170D06</item>
+        <item name="mpvOverlayEnd">#A0080402</item>
+        <item name="mpvChipStart">#22D08A49</item>
+        <item name="mpvChipEnd">#12B87333</item>
+        <item name="mpvStroke">#2AF0B078</item>
+        <item name="mpvStrokeStrong">#4AF7C797</item>
+    </style>
+
+    <style name="FilePickerTheme.Indigo" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF3949AB</item>
+        <item name="colorPrimaryDark">#FF283593</item>
+        <item name="colorAccent">#FF5C6BC0</item>
+        <item name="mpvAccent">#FF3949AB</item>
+        <item name="mpvAccentHot">#FF5C6BC0</item>
+        <item name="mpvAccentDeep">#FF283593</item>
+        <item name="mpvFilterActiveIcon">#FF5C6BC0</item>
+        <item name="mpvStrokeFocus">#FF5C6BC0</item>
+        <item name="mpvFocusWash">#2E3949AB</item>
+        <item name="mpvFocusWashSoft">#183949AB</item>
+        <item name="mpvWindowStart">#FF080B1A</item>
+        <item name="mpvWindowCenter">#FF040610</item>
+        <item name="mpvWindowEnd">#FF020306</item>
+        <item name="mpvWindowGlowStart">#383949AB</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#225C6BC0</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0D122A</item>
+        <item name="mpvSurfaceEnd">#E6070A16</item>
+        <item name="mpvSurfaceAltStart">#70141A38</item>
+        <item name="mpvSurfaceAltEnd">#540B0F20</item>
+        <item name="mpvSurfaceSoft">#143949AB</item>
+        <item name="mpvSurfaceStrongStart">#DE11183D</item>
+        <item name="mpvSurfaceStrongEnd">#D2090D1B</item>
+        <item name="mpvHeroStart">#D0182452</item>
+        <item name="mpvHeroEnd">#C2090D1E</item>
+        <item name="mpvOverlayStart">#B80C112A</item>
+        <item name="mpvOverlayCenter">#AA070B17</item>
+        <item name="mpvOverlayEnd">#A0030408</item>
+        <item name="mpvChipStart">#225C6BC0</item>
+        <item name="mpvChipEnd">#123949AB</item>
+        <item name="mpvStroke">#2A8E9AF0</item>
+        <item name="mpvStrokeStrong">#4AAAB4FF</item>
+    </style>
+
+    <style name="FilePickerTheme.Slate" parent="FilePickerTheme">
+        <item name="colorPrimary">#FF78909C</item>
+        <item name="colorPrimaryDark">#FF546E7A</item>
+        <item name="colorAccent">#FF90A4AE</item>
+        <item name="mpvAccent">#FF78909C</item>
+        <item name="mpvAccentHot">#FF90A4AE</item>
+        <item name="mpvAccentDeep">#FF546E7A</item>
+        <item name="mpvFilterActiveIcon">#FF90A4AE</item>
+        <item name="mpvStrokeFocus">#FF90A4AE</item>
+        <item name="mpvFocusWash">#2E78909C</item>
+        <item name="mpvFocusWashSoft">#1878909C</item>
+        <item name="mpvWindowStart">#FF0D1214</item>
+        <item name="mpvWindowCenter">#FF070A0C</item>
+        <item name="mpvWindowEnd">#FF030405</item>
+        <item name="mpvWindowGlowStart">#3378909C</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2090A4AE</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA151D20</item>
+        <item name="mpvSurfaceEnd">#E60B0F11</item>
+        <item name="mpvSurfaceAltStart">#70202A2E</item>
+        <item name="mpvSurfaceAltEnd">#5412181B</item>
+        <item name="mpvSurfaceSoft">#1478909C</item>
+        <item name="mpvSurfaceStrongStart">#DE222D32</item>
+        <item name="mpvSurfaceStrongEnd">#D20F1518</item>
+        <item name="mpvHeroStart">#D02D3A40</item>
+        <item name="mpvHeroEnd">#C211171A</item>
+        <item name="mpvOverlayStart">#B8171F22</item>
+        <item name="mpvOverlayCenter">#AA0D1113</item>
+        <item name="mpvOverlayEnd">#A0040607</item>
+        <item name="mpvChipStart">#2090A4AE</item>
+        <item name="mpvChipEnd">#1278909C</item>
+        <item name="mpvStroke">#2AC0D3DC</item>
+        <item name="mpvStrokeStrong">#4AD4E3EA</item>
+    </style>
+
+    <style name="FilePickerTheme.Chrome" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFB8C1CC</item>
+        <item name="colorPrimaryDark">#FF6F7D8B</item>
+        <item name="colorAccent">#FFE3E9F0</item>
+        <item name="mpvAccent">#FFB8C1CC</item>
+        <item name="mpvAccentHot">#FFE3E9F0</item>
+        <item name="mpvAccentDeep">#FF6F7D8B</item>
+        <item name="mpvFilterActiveIcon">#FFE3E9F0</item>
+        <item name="mpvStrokeFocus">#FFE3E9F0</item>
+        <item name="mpvFocusWash">#2EB8C1CC</item>
+        <item name="mpvFocusWashSoft">#18B8C1CC</item>
+        <item name="mpvWindowStart">#FF12161A</item>
+        <item name="mpvWindowCenter">#FF090C10</item>
+        <item name="mpvWindowEnd">#FF030405</item>
+        <item name="mpvWindowGlowStart">#33B8C1CC</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20E3E9F0</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA1D242C</item>
+        <item name="mpvSurfaceEnd">#E60D1116</item>
+        <item name="mpvSurfaceAltStart">#7029323D</item>
+        <item name="mpvSurfaceAltEnd">#54171D24</item>
+        <item name="mpvSurfaceSoft">#14B8C1CC</item>
+        <item name="mpvSurfaceStrongStart">#DE303A45</item>
+        <item name="mpvSurfaceStrongEnd">#D2141A20</item>
+        <item name="mpvHeroStart">#D03D4A57</item>
+        <item name="mpvHeroEnd">#C2161C22</item>
+        <item name="mpvOverlayStart">#B81D242C</item>
+        <item name="mpvOverlayCenter">#AA101419</item>
+        <item name="mpvOverlayEnd">#A0050709</item>
+        <item name="mpvChipStart">#20E3E9F0</item>
+        <item name="mpvChipEnd">#12B8C1CC</item>
+        <item name="mpvStroke">#2AD9E2EC</item>
+        <item name="mpvStrokeStrong">#4AF0F5FA</item>
+    </style>
+
+    <style name="FilePickerTheme.Oyster" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFC8B6A6</item>
+        <item name="colorPrimaryDark">#FF8A7466</item>
+        <item name="colorAccent">#FFE2D2C4</item>
+        <item name="mpvAccent">#FFC8B6A6</item>
+        <item name="mpvAccentHot">#FFE2D2C4</item>
+        <item name="mpvAccentDeep">#FF8A7466</item>
+        <item name="mpvFilterActiveIcon">#FFE2D2C4</item>
+        <item name="mpvStrokeFocus">#FFE2D2C4</item>
+        <item name="mpvFocusWash">#2EC8B6A6</item>
+        <item name="mpvFocusWashSoft">#18C8B6A6</item>
+        <item name="mpvWindowStart">#FF19130F</item>
+        <item name="mpvWindowCenter">#FF0F0B09</item>
+        <item name="mpvWindowEnd">#FF050403</item>
+        <item name="mpvWindowGlowStart">#33C8B6A6</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20E2D2C4</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA282019</item>
+        <item name="mpvSurfaceEnd">#E6140F0C</item>
+        <item name="mpvSurfaceAltStart">#70362B22</item>
+        <item name="mpvSurfaceAltEnd">#541F1914</item>
+        <item name="mpvSurfaceSoft">#14C8B6A6</item>
+        <item name="mpvSurfaceStrongStart">#DE3C3026</item>
+        <item name="mpvSurfaceStrongEnd">#D21A1410</item>
+        <item name="mpvHeroStart">#D04F4032</item>
+        <item name="mpvHeroEnd">#C21C1510</item>
+        <item name="mpvOverlayStart">#B8292019</item>
+        <item name="mpvOverlayCenter">#AA17120E</item>
+        <item name="mpvOverlayEnd">#A0080605</item>
+        <item name="mpvChipStart">#20E2D2C4</item>
+        <item name="mpvChipEnd">#12C8B6A6</item>
+        <item name="mpvStroke">#2AF0DED0</item>
+        <item name="mpvStrokeStrong">#4AF8E9DE</item>
+    </style>
+
+    <style name="FilePickerTheme.Ivory" parent="FilePickerTheme">
+        <item name="colorPrimary">#FFD8C690</item>
+        <item name="colorPrimaryDark">#FF9B8455</item>
+        <item name="colorAccent">#FFFFF1CC</item>
+        <item name="mpvAccent">#FFD8C690</item>
+        <item name="mpvAccentHot">#FFFFF1CC</item>
+        <item name="mpvAccentDeep">#FF9B8455</item>
+        <item name="mpvFilterActiveIcon">#FFFFF1CC</item>
+        <item name="mpvStrokeFocus">#FFFFF1CC</item>
+        <item name="mpvFocusWash">#2ED8C690</item>
+        <item name="mpvFocusWashSoft">#18D8C690</item>
+        <item name="mpvWindowStart">#FF191508</item>
+        <item name="mpvWindowCenter">#FF0F0C05</item>
+        <item name="mpvWindowEnd">#FF050401</item>
+        <item name="mpvWindowGlowStart">#33D8C690</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20FFF1CC</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2B2410</item>
+        <item name="mpvSurfaceEnd">#E6141107</item>
+        <item name="mpvSurfaceAltStart">#70382F15</item>
+        <item name="mpvSurfaceAltEnd">#54201A0B</item>
+        <item name="mpvSurfaceSoft">#14D8C690</item>
+        <item name="mpvSurfaceStrongStart">#DE3F3518</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1609</item>
+        <item name="mpvHeroStart">#D055471F</item>
+        <item name="mpvHeroEnd">#C21D1709</item>
+        <item name="mpvOverlayStart">#B82B240F</item>
+        <item name="mpvOverlayCenter">#AA181407</item>
+        <item name="mpvOverlayEnd">#A0080602</item>
+        <item name="mpvChipStart">#20FFF1CC</item>
+        <item name="mpvChipEnd">#12D8C690</item>
+        <item name="mpvStroke">#2AFFF4D5</item>
+        <item name="mpvStrokeStrong">#4AFFFAE8</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Ocean" parent="FilePickerTheme.Ocean">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Crimson" parent="FilePickerTheme.Crimson">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Violet" parent="FilePickerTheme.Violet">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Emerald" parent="FilePickerTheme.Emerald">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Amber" parent="FilePickerTheme.Amber">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Rose" parent="FilePickerTheme.Rose">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Cyan" parent="FilePickerTheme.Cyan">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Lime" parent="FilePickerTheme.Lime">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Gold" parent="FilePickerTheme.Gold">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Copper" parent="FilePickerTheme.Copper">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Indigo" parent="FilePickerTheme.Indigo">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Slate" parent="FilePickerTheme.Slate">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Chrome" parent="FilePickerTheme.Chrome">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Oyster" parent="FilePickerTheme.Oyster">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerThemeSpecial.Ivory" parent="FilePickerTheme.Ivory">
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="FilePickerTheme.AlertDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorPrimary">?attr/mpvAccent</item>
+        <item name="colorPrimaryDark">?attr/mpvAccentDeep</item>
+        <item name="colorAccent">?attr/mpvAccentHot</item>
+        <item name="android:windowBackground">@drawable/bg_tv_dialog</item>
+        <item name="android:textColorPrimary">@color/tv_text</item>
+        <item name="android:textColorSecondary">@color/tv_text_dim</item>
+        <item name="android:colorBackground">@color/tv_charcoal</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="colorPrimary">@color/tv_purple</item>
+        <item name="colorPrimaryDark">@color/tv_purple_deep</item>
+        <item name="colorAccent">@color/tv_purple_hot</item>
+        <item name="mpvAccent">@color/tv_purple</item>
+        <item name="mpvAccentHot">@color/tv_purple_hot</item>
+        <item name="mpvAccentDeep">@color/tv_purple_deep</item>
+        <item name="mpvAccentInk">@color/tv_purple_ink</item>
+        <item name="mpvTextOnAccent">@color/tv_text_on_accent</item>
+        <item name="mpvFilterActiveIcon">@color/tv_filter_active_icon</item>
+        <item name="mpvWindowStart">#FF101216</item>
+        <item name="mpvWindowCenter">#FF090B0E</item>
+        <item name="mpvWindowEnd">#FF040506</item>
+        <item name="mpvWindowGlowStart">#22FFFFFF</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#16D8DDE3</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">@color/tv_surface</item>
+        <item name="mpvSurfaceEnd">#E6151E2B</item>
+        <item name="mpvSurfaceAltStart">#68171C23</item>
+        <item name="mpvSurfaceAltEnd">#52101418</item>
+        <item name="mpvSurfaceSoft">@color/tv_surface_soft</item>
+        <item name="mpvSurfaceStrongStart">#DA141D2A</item>
+        <item name="mpvSurfaceStrongEnd">#D20D131C</item>
+        <item name="mpvHeroStart">#CF1A2736</item>
+        <item name="mpvHeroEnd">#C20D141E</item>
+        <item name="mpvOverlayStart">#B812161B</item>
+        <item name="mpvOverlayCenter">#AA111418</item>
+        <item name="mpvOverlayEnd">#A00C0E12</item>
+        <item name="mpvChipStart">#14FFFFFF</item>
+        <item name="mpvChipEnd">#0DFFFFFF</item>
+        <item name="mpvStroke">@color/tv_stroke</item>
+        <item name="mpvStrokeStrong">@color/tv_stroke_strong</item>
+        <item name="mpvStrokeFocus">@color/tv_stroke_focus</item>
+        <item name="mpvFocusWash">@color/tv_focus_wash</item>
+        <item name="mpvFocusWashSoft">@color/tv_focus_wash_soft</item>
+        <item name="colorSurface">@color/tv_charcoal</item>
+        <item name="colorSurfaceVariant">@color/tv_surface_alt</item>
+        <item name="colorOnSurface">@color/tv_text</item>
+        <item name="colorOnSurfaceVariant">@color/tv_text_dim</item>
+        <item name="buttonBarStyle">@style/MpvPlayer.ButtonBar</item>
+        <item name="buttonBarButtonStyle">@style/MpvPlayer.ButtonBarButton</item>
+        <item name="alertDialogTheme">@style/TvAlertDialog</item>
+        <item name="android:alertDialogTheme">@style/TvAlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.Preference.AlertDialog</item>
+    </style>
+
+    <!-- Opaque player content, but a translucent window so the launching app (Stremio) stays
+         paused rather than stopped — keeps its result/auto-next callback alive. Used by
+         TranslucentMPVActivity; the video surface + loading cover keep it visually opaque. -->
+    <style name="AppTheme.Translucent" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!-- Overlay merged on top of the color theme in MPVActivity.onCreate (applyPlayer re-sets
+         the theme), to restore translucency for TranslucentMPVActivity before the window is built. -->
+    <style name="PlayerTranslucentOverlay">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="AppTheme.Ocean" parent="AppTheme">
+        <item name="colorPrimary">#FF1E88E5</item>
+        <item name="colorPrimaryDark">#FF1565C0</item>
+        <item name="colorAccent">#FF42A5F5</item>
+        <item name="mpvAccent">#FF1E88E5</item>
+        <item name="mpvAccentHot">#FF42A5F5</item>
+        <item name="mpvAccentDeep">#FF1565C0</item>
+        <item name="mpvFilterActiveIcon">#FF42A5F5</item>
+        <item name="mpvStrokeFocus">#FF42A5F5</item>
+        <item name="mpvFocusWash">#2E1E88E5</item>
+        <item name="mpvFocusWashSoft">#181E88E5</item>
+        <item name="mpvWindowStart">#FF06111A</item>
+        <item name="mpvWindowCenter">#FF03080D</item>
+        <item name="mpvWindowEnd">#FF020304</item>
+        <item name="mpvWindowGlowStart">#332186D9</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#1C42A5F5</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0A1A29</item>
+        <item name="mpvSurfaceEnd">#E607111C</item>
+        <item name="mpvSurfaceAltStart">#7010202F</item>
+        <item name="mpvSurfaceAltEnd">#54101A25</item>
+        <item name="mpvSurfaceSoft">#142A8FDB</item>
+        <item name="mpvSurfaceStrongStart">#DE0D1F30</item>
+        <item name="mpvSurfaceStrongEnd">#D2091522</item>
+        <item name="mpvHeroStart">#D0162F46</item>
+        <item name="mpvHeroEnd">#C2071420</item>
+        <item name="mpvOverlayStart">#B80A1722</item>
+        <item name="mpvOverlayCenter">#AA08111A</item>
+        <item name="mpvOverlayEnd">#A0050A10</item>
+        <item name="mpvChipStart">#1E42A5F5</item>
+        <item name="mpvChipEnd">#122A8FDB</item>
+        <item name="mpvStroke">#2A8BC9FF</item>
+        <item name="mpvStrokeStrong">#4AA7D5FF</item>
+    </style>
+
+    <style name="AppTheme.Crimson" parent="AppTheme">
+        <item name="colorPrimary">#FFE53935</item>
+        <item name="colorPrimaryDark">#FFC62828</item>
+        <item name="colorAccent">#FFFF5252</item>
+        <item name="mpvAccent">#FFE53935</item>
+        <item name="mpvAccentHot">#FFFF5252</item>
+        <item name="mpvAccentDeep">#FFC62828</item>
+        <item name="mpvFilterActiveIcon">#FFFF5252</item>
+        <item name="mpvStrokeFocus">#FFFF5252</item>
+        <item name="mpvFocusWash">#2EE53935</item>
+        <item name="mpvFocusWashSoft">#18E53935</item>
+        <item name="mpvWindowStart">#FF1A0709</item>
+        <item name="mpvWindowCenter">#FF0D0406</item>
+        <item name="mpvWindowEnd">#FF050203</item>
+        <item name="mpvWindowGlowStart">#35E53935</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#1EFF5252</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA250D10</item>
+        <item name="mpvSurfaceEnd">#E6110708</item>
+        <item name="mpvSurfaceAltStart">#70311416</item>
+        <item name="mpvSurfaceAltEnd">#541C0C0E</item>
+        <item name="mpvSurfaceSoft">#14E53935</item>
+        <item name="mpvSurfaceStrongStart">#DE321014</item>
+        <item name="mpvSurfaceStrongEnd">#D216090B</item>
+        <item name="mpvHeroStart">#D0451519</item>
+        <item name="mpvHeroEnd">#C218090C</item>
+        <item name="mpvOverlayStart">#B8240B0E</item>
+        <item name="mpvOverlayCenter">#AA160709</item>
+        <item name="mpvOverlayEnd">#A0080304</item>
+        <item name="mpvChipStart">#1EFF5252</item>
+        <item name="mpvChipEnd">#12E53935</item>
+        <item name="mpvStroke">#2AFF8A8A</item>
+        <item name="mpvStrokeStrong">#4AFFA3A3</item>
+    </style>
+
+    <style name="AppTheme.Violet" parent="AppTheme">
+        <item name="colorPrimary">#FF8E24AA</item>
+        <item name="colorPrimaryDark">#FF6A1B9A</item>
+        <item name="colorAccent">#FFAB47BC</item>
+        <item name="mpvAccent">#FF8E24AA</item>
+        <item name="mpvAccentHot">#FFAB47BC</item>
+        <item name="mpvAccentDeep">#FF6A1B9A</item>
+        <item name="mpvFilterActiveIcon">#FFAB47BC</item>
+        <item name="mpvStrokeFocus">#FFAB47BC</item>
+        <item name="mpvFocusWash">#2E8E24AA</item>
+        <item name="mpvFocusWashSoft">#188E24AA</item>
+        <item name="mpvWindowStart">#FF13091A</item>
+        <item name="mpvWindowCenter">#FF0A0510</item>
+        <item name="mpvWindowEnd">#FF040206</item>
+        <item name="mpvWindowGlowStart">#358E24AA</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20AB47BC</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA1F0D29</item>
+        <item name="mpvSurfaceEnd">#E60F0717</item>
+        <item name="mpvSurfaceAltStart">#702A1335</item>
+        <item name="mpvSurfaceAltEnd">#54190920</item>
+        <item name="mpvSurfaceSoft">#148E24AA</item>
+        <item name="mpvSurfaceStrongStart">#DE2E123C</item>
+        <item name="mpvSurfaceStrongEnd">#D2140820</item>
+        <item name="mpvHeroStart">#D03E1950</item>
+        <item name="mpvHeroEnd">#C2150820</item>
+        <item name="mpvOverlayStart">#B8210C2A</item>
+        <item name="mpvOverlayCenter">#AA15071B</item>
+        <item name="mpvOverlayEnd">#A008030B</item>
+        <item name="mpvChipStart">#20AB47BC</item>
+        <item name="mpvChipEnd">#128E24AA</item>
+        <item name="mpvStroke">#2ACB7BE0</item>
+        <item name="mpvStrokeStrong">#4ADAA0EA</item>
+    </style>
+
+    <style name="AppTheme.Emerald" parent="AppTheme">
+        <item name="colorPrimary">#FF43A047</item>
+        <item name="colorPrimaryDark">#FF2E7D32</item>
+        <item name="colorAccent">#FF66BB6A</item>
+        <item name="mpvAccent">#FF43A047</item>
+        <item name="mpvAccentHot">#FF66BB6A</item>
+        <item name="mpvAccentDeep">#FF2E7D32</item>
+        <item name="mpvFilterActiveIcon">#FF66BB6A</item>
+        <item name="mpvStrokeFocus">#FF66BB6A</item>
+        <item name="mpvFocusWash">#2E43A047</item>
+        <item name="mpvFocusWashSoft">#1843A047</item>
+        <item name="mpvWindowStart">#FF07170D</item>
+        <item name="mpvWindowCenter">#FF031007</item>
+        <item name="mpvWindowEnd">#FF010603</item>
+        <item name="mpvWindowGlowStart">#3543A047</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2066BB6A</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0A2411</item>
+        <item name="mpvSurfaceEnd">#E6061209</item>
+        <item name="mpvSurfaceAltStart">#70112E18</item>
+        <item name="mpvSurfaceAltEnd">#540B1B10</item>
+        <item name="mpvSurfaceSoft">#1443A047</item>
+        <item name="mpvSurfaceStrongStart">#DE0E3218</item>
+        <item name="mpvSurfaceStrongEnd">#D208180C</item>
+        <item name="mpvHeroStart">#D0174324</item>
+        <item name="mpvHeroEnd">#C2081A0D</item>
+        <item name="mpvOverlayStart">#B80B2411</item>
+        <item name="mpvOverlayCenter">#AA07160B</item>
+        <item name="mpvOverlayEnd">#A0030804</item>
+        <item name="mpvChipStart">#2066BB6A</item>
+        <item name="mpvChipEnd">#1243A047</item>
+        <item name="mpvStroke">#2A8BE28F</item>
+        <item name="mpvStrokeStrong">#4AA8EBAA</item>
+    </style>
+
+    <style name="AppTheme.Amber" parent="AppTheme">
+        <item name="colorPrimary">#FFFB8C00</item>
+        <item name="colorPrimaryDark">#FFEF6C00</item>
+        <item name="colorAccent">#FFFFA726</item>
+        <item name="mpvAccent">#FFFB8C00</item>
+        <item name="mpvAccentHot">#FFFFA726</item>
+        <item name="mpvAccentDeep">#FFEF6C00</item>
+        <item name="mpvFilterActiveIcon">#FFFFA726</item>
+        <item name="mpvStrokeFocus">#FFFFA726</item>
+        <item name="mpvFocusWash">#2EFB8C00</item>
+        <item name="mpvFocusWashSoft">#18FB8C00</item>
+        <item name="mpvWindowStart">#FF1A1004</item>
+        <item name="mpvWindowCenter">#FF100903</item>
+        <item name="mpvWindowEnd">#FF060301</item>
+        <item name="mpvWindowGlowStart">#38FB8C00</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22FFA726</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A1807</item>
+        <item name="mpvSurfaceEnd">#E6140B03</item>
+        <item name="mpvSurfaceAltStart">#7038200A</item>
+        <item name="mpvSurfaceAltEnd">#54201206</item>
+        <item name="mpvSurfaceSoft">#14FB8C00</item>
+        <item name="mpvSurfaceStrongStart">#DE3B230A</item>
+        <item name="mpvSurfaceStrongEnd">#D21B0F04</item>
+        <item name="mpvHeroStart">#D0502F0D</item>
+        <item name="mpvHeroEnd">#C21C1004</item>
+        <item name="mpvOverlayStart">#B82A1806</item>
+        <item name="mpvOverlayCenter">#AA170D03</item>
+        <item name="mpvOverlayEnd">#A0080401</item>
+        <item name="mpvChipStart">#22FFA726</item>
+        <item name="mpvChipEnd">#12FB8C00</item>
+        <item name="mpvStroke">#2AFFC56B</item>
+        <item name="mpvStrokeStrong">#4AFFD38C</item>
+    </style>
+
+    <style name="AppTheme.Rose" parent="AppTheme">
+        <item name="colorPrimary">#FFD81B60</item>
+        <item name="colorPrimaryDark">#FFC2185B</item>
+        <item name="colorAccent">#FFEC407A</item>
+        <item name="mpvAccent">#FFD81B60</item>
+        <item name="mpvAccentHot">#FFEC407A</item>
+        <item name="mpvAccentDeep">#FFC2185B</item>
+        <item name="mpvFilterActiveIcon">#FFEC407A</item>
+        <item name="mpvStrokeFocus">#FFEC407A</item>
+        <item name="mpvFocusWash">#2ED81B60</item>
+        <item name="mpvFocusWashSoft">#18D81B60</item>
+        <item name="mpvWindowStart">#FF1A0610</item>
+        <item name="mpvWindowCenter">#FF0E0409</item>
+        <item name="mpvWindowEnd">#FF050204</item>
+        <item name="mpvWindowGlowStart">#35D81B60</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20EC407A</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A0A18</item>
+        <item name="mpvSurfaceEnd">#E6140610</item>
+        <item name="mpvSurfaceAltStart">#70361322</item>
+        <item name="mpvSurfaceAltEnd">#541F0A14</item>
+        <item name="mpvSurfaceSoft">#14D81B60</item>
+        <item name="mpvSurfaceStrongStart">#DE3D1125</item>
+        <item name="mpvSurfaceStrongEnd">#D21B0711</item>
+        <item name="mpvHeroStart">#D0501730</item>
+        <item name="mpvHeroEnd">#C21B0711</item>
+        <item name="mpvOverlayStart">#B82A0A18</item>
+        <item name="mpvOverlayCenter">#AA18060E</item>
+        <item name="mpvOverlayEnd">#A0080305</item>
+        <item name="mpvChipStart">#20EC407A</item>
+        <item name="mpvChipEnd">#12D81B60</item>
+        <item name="mpvStroke">#2AFF8CB2</item>
+        <item name="mpvStrokeStrong">#4AFFA8C8</item>
+    </style>
+
+    <style name="AppTheme.Cyan" parent="AppTheme">
+        <item name="colorPrimary">#FF00ACC1</item>
+        <item name="colorPrimaryDark">#FF00838F</item>
+        <item name="colorAccent">#FF26C6DA</item>
+        <item name="mpvAccent">#FF00ACC1</item>
+        <item name="mpvAccentHot">#FF26C6DA</item>
+        <item name="mpvAccentDeep">#FF00838F</item>
+        <item name="mpvFilterActiveIcon">#FF26C6DA</item>
+        <item name="mpvStrokeFocus">#FF26C6DA</item>
+        <item name="mpvFocusWash">#2E00ACC1</item>
+        <item name="mpvFocusWashSoft">#1800ACC1</item>
+        <item name="mpvWindowStart">#FF06191A</item>
+        <item name="mpvWindowCenter">#FF031011</item>
+        <item name="mpvWindowEnd">#FF010607</item>
+        <item name="mpvWindowGlowStart">#3300ACC1</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2026C6DA</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA082326</item>
+        <item name="mpvSurfaceEnd">#E6041113</item>
+        <item name="mpvSurfaceAltStart">#7020383B</item>
+        <item name="mpvSurfaceAltEnd">#54102022</item>
+        <item name="mpvSurfaceSoft">#1400ACC1</item>
+        <item name="mpvSurfaceStrongStart">#DE0A3034</item>
+        <item name="mpvSurfaceStrongEnd">#D205181A</item>
+        <item name="mpvHeroStart">#D00D4248</item>
+        <item name="mpvHeroEnd">#C2051A1D</item>
+        <item name="mpvOverlayStart">#B8082326</item>
+        <item name="mpvOverlayCenter">#AA041517</item>
+        <item name="mpvOverlayEnd">#A0020809</item>
+        <item name="mpvChipStart">#2026C6DA</item>
+        <item name="mpvChipEnd">#1200ACC1</item>
+        <item name="mpvStroke">#2A73E8F2</item>
+        <item name="mpvStrokeStrong">#4A9AF2FA</item>
+    </style>
+
+    <style name="AppTheme.Lime" parent="AppTheme">
+        <item name="colorPrimary">#FF9E9D24</item>
+        <item name="colorPrimaryDark">#FF827717</item>
+        <item name="colorAccent">#FFD4E157</item>
+        <item name="mpvAccent">#FF9E9D24</item>
+        <item name="mpvAccentHot">#FFD4E157</item>
+        <item name="mpvAccentDeep">#FF827717</item>
+        <item name="mpvFilterActiveIcon">#FFD4E157</item>
+        <item name="mpvStrokeFocus">#FFD4E157</item>
+        <item name="mpvFocusWash">#2E9E9D24</item>
+        <item name="mpvFocusWashSoft">#189E9D24</item>
+        <item name="mpvWindowStart">#FF151607</item>
+        <item name="mpvWindowCenter">#FF0D0E04</item>
+        <item name="mpvWindowEnd">#FF050601</item>
+        <item name="mpvWindowGlowStart">#389E9D24</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22D4E157</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA25250A</item>
+        <item name="mpvSurfaceEnd">#E6121205</item>
+        <item name="mpvSurfaceAltStart">#70333313</item>
+        <item name="mpvSurfaceAltEnd">#541D1D09</item>
+        <item name="mpvSurfaceSoft">#149E9D24</item>
+        <item name="mpvSurfaceStrongStart">#DE363610</item>
+        <item name="mpvSurfaceStrongEnd">#D2181807</item>
+        <item name="mpvHeroStart">#D0474614</item>
+        <item name="mpvHeroEnd">#C21A1A08</item>
+        <item name="mpvOverlayStart">#B823230A</item>
+        <item name="mpvOverlayCenter">#AA151506</item>
+        <item name="mpvOverlayEnd">#A0070702</item>
+        <item name="mpvChipStart">#22D4E157</item>
+        <item name="mpvChipEnd">#129E9D24</item>
+        <item name="mpvStroke">#2AE5EF8A</item>
+        <item name="mpvStrokeStrong">#4AF0F7A6</item>
+    </style>
+
+    <style name="AppTheme.Gold" parent="AppTheme">
+        <item name="colorPrimary">#FFFDD835</item>
+        <item name="colorPrimaryDark">#FFF9A825</item>
+        <item name="colorAccent">#FFFFEB3B</item>
+        <item name="mpvAccent">#FFFDD835</item>
+        <item name="mpvAccentHot">#FFFFEB3B</item>
+        <item name="mpvAccentDeep">#FFF9A825</item>
+        <item name="mpvFilterActiveIcon">#FFFFEB3B</item>
+        <item name="mpvStrokeFocus">#FFFFEB3B</item>
+        <item name="mpvFocusWash">#2EFDD835</item>
+        <item name="mpvFocusWashSoft">#18FDD835</item>
+        <item name="mpvWindowStart">#FF171703</item>
+        <item name="mpvWindowCenter">#FF0D0D02</item>
+        <item name="mpvWindowEnd">#FF050500</item>
+        <item name="mpvWindowGlowStart">#38FDD835</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22FFEB3B</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA282407</item>
+        <item name="mpvSurfaceEnd">#E6151304</item>
+        <item name="mpvSurfaceAltStart">#7038320A</item>
+        <item name="mpvSurfaceAltEnd">#54201C06</item>
+        <item name="mpvSurfaceSoft">#14FDD835</item>
+        <item name="mpvSurfaceStrongStart">#DE3C3508</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1703</item>
+        <item name="mpvHeroStart">#D050450A</item>
+        <item name="mpvHeroEnd">#C21D1803</item>
+        <item name="mpvOverlayStart">#B82A2404</item>
+        <item name="mpvOverlayCenter">#AA171303</item>
+        <item name="mpvOverlayEnd">#A0080701</item>
+        <item name="mpvChipStart">#22FFEB3B</item>
+        <item name="mpvChipEnd">#12FDD835</item>
+        <item name="mpvStroke">#2AFFF176</item>
+        <item name="mpvStrokeStrong">#4AFFF59D</item>
+    </style>
+
+    <style name="AppTheme.Copper" parent="AppTheme">
+        <item name="colorPrimary">#FFB87333</item>
+        <item name="colorPrimaryDark">#FF8D4B24</item>
+        <item name="colorAccent">#FFD08A49</item>
+        <item name="mpvAccent">#FFB87333</item>
+        <item name="mpvAccentHot">#FFD08A49</item>
+        <item name="mpvAccentDeep">#FF8D4B24</item>
+        <item name="mpvFilterActiveIcon">#FFD08A49</item>
+        <item name="mpvStrokeFocus">#FFD08A49</item>
+        <item name="mpvFocusWash">#2EB87333</item>
+        <item name="mpvFocusWashSoft">#18B87333</item>
+        <item name="mpvWindowStart">#FF1A0F08</item>
+        <item name="mpvWindowCenter">#FF100905</item>
+        <item name="mpvWindowEnd">#FF060302</item>
+        <item name="mpvWindowGlowStart">#38B87333</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22D08A49</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A180C</item>
+        <item name="mpvSurfaceEnd">#E6140C06</item>
+        <item name="mpvSurfaceAltStart">#70382313</item>
+        <item name="mpvSurfaceAltEnd">#5420140B</item>
+        <item name="mpvSurfaceSoft">#14B87333</item>
+        <item name="mpvSurfaceStrongStart">#DE3D2512</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1008</item>
+        <item name="mpvHeroStart">#D0523218</item>
+        <item name="mpvHeroEnd">#C21D1008</item>
+        <item name="mpvOverlayStart">#B82A180B</item>
+        <item name="mpvOverlayCenter">#AA170D06</item>
+        <item name="mpvOverlayEnd">#A0080402</item>
+        <item name="mpvChipStart">#22D08A49</item>
+        <item name="mpvChipEnd">#12B87333</item>
+        <item name="mpvStroke">#2AF0B078</item>
+        <item name="mpvStrokeStrong">#4AF7C797</item>
+    </style>
+
+    <style name="AppTheme.Indigo" parent="AppTheme">
+        <item name="colorPrimary">#FF3949AB</item>
+        <item name="colorPrimaryDark">#FF283593</item>
+        <item name="colorAccent">#FF5C6BC0</item>
+        <item name="mpvAccent">#FF3949AB</item>
+        <item name="mpvAccentHot">#FF5C6BC0</item>
+        <item name="mpvAccentDeep">#FF283593</item>
+        <item name="mpvFilterActiveIcon">#FF5C6BC0</item>
+        <item name="mpvStrokeFocus">#FF5C6BC0</item>
+        <item name="mpvFocusWash">#2E3949AB</item>
+        <item name="mpvFocusWashSoft">#183949AB</item>
+        <item name="mpvWindowStart">#FF080B1A</item>
+        <item name="mpvWindowCenter">#FF040610</item>
+        <item name="mpvWindowEnd">#FF020306</item>
+        <item name="mpvWindowGlowStart">#383949AB</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#225C6BC0</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0D122A</item>
+        <item name="mpvSurfaceEnd">#E6070A16</item>
+        <item name="mpvSurfaceAltStart">#70141A38</item>
+        <item name="mpvSurfaceAltEnd">#540B0F20</item>
+        <item name="mpvSurfaceSoft">#143949AB</item>
+        <item name="mpvSurfaceStrongStart">#DE11183D</item>
+        <item name="mpvSurfaceStrongEnd">#D2090D1B</item>
+        <item name="mpvHeroStart">#D0182452</item>
+        <item name="mpvHeroEnd">#C2090D1E</item>
+        <item name="mpvOverlayStart">#B80C112A</item>
+        <item name="mpvOverlayCenter">#AA070B17</item>
+        <item name="mpvOverlayEnd">#A0030408</item>
+        <item name="mpvChipStart">#225C6BC0</item>
+        <item name="mpvChipEnd">#123949AB</item>
+        <item name="mpvStroke">#2A8E9AF0</item>
+        <item name="mpvStrokeStrong">#4AAAB4FF</item>
+    </style>
+
+    <style name="AppTheme.Slate" parent="AppTheme">
+        <item name="colorPrimary">#FF78909C</item>
+        <item name="colorPrimaryDark">#FF546E7A</item>
+        <item name="colorAccent">#FF90A4AE</item>
+        <item name="mpvAccent">#FF78909C</item>
+        <item name="mpvAccentHot">#FF90A4AE</item>
+        <item name="mpvAccentDeep">#FF546E7A</item>
+        <item name="mpvFilterActiveIcon">#FF90A4AE</item>
+        <item name="mpvStrokeFocus">#FF90A4AE</item>
+        <item name="mpvFocusWash">#2E78909C</item>
+        <item name="mpvFocusWashSoft">#1878909C</item>
+        <item name="mpvWindowStart">#FF0D1214</item>
+        <item name="mpvWindowCenter">#FF070A0C</item>
+        <item name="mpvWindowEnd">#FF030405</item>
+        <item name="mpvWindowGlowStart">#3378909C</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2090A4AE</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA151D20</item>
+        <item name="mpvSurfaceEnd">#E60B0F11</item>
+        <item name="mpvSurfaceAltStart">#70202A2E</item>
+        <item name="mpvSurfaceAltEnd">#5412181B</item>
+        <item name="mpvSurfaceSoft">#1478909C</item>
+        <item name="mpvSurfaceStrongStart">#DE222D32</item>
+        <item name="mpvSurfaceStrongEnd">#D20F1518</item>
+        <item name="mpvHeroStart">#D02D3A40</item>
+        <item name="mpvHeroEnd">#C211171A</item>
+        <item name="mpvOverlayStart">#B8171F22</item>
+        <item name="mpvOverlayCenter">#AA0D1113</item>
+        <item name="mpvOverlayEnd">#A0040607</item>
+        <item name="mpvChipStart">#2090A4AE</item>
+        <item name="mpvChipEnd">#1278909C</item>
+        <item name="mpvStroke">#2AC0D3DC</item>
+        <item name="mpvStrokeStrong">#4AD4E3EA</item>
+    </style>
+
+    <style name="AppTheme.Chrome" parent="AppTheme">
+        <item name="colorPrimary">#FFB8C1CC</item>
+        <item name="colorPrimaryDark">#FF6F7D8B</item>
+        <item name="colorAccent">#FFE3E9F0</item>
+        <item name="mpvAccent">#FFB8C1CC</item>
+        <item name="mpvAccentHot">#FFE3E9F0</item>
+        <item name="mpvAccentDeep">#FF6F7D8B</item>
+        <item name="mpvFilterActiveIcon">#FFE3E9F0</item>
+        <item name="mpvStrokeFocus">#FFE3E9F0</item>
+        <item name="mpvFocusWash">#2EB8C1CC</item>
+        <item name="mpvFocusWashSoft">#18B8C1CC</item>
+        <item name="mpvWindowStart">#FF12161A</item>
+        <item name="mpvWindowCenter">#FF090C10</item>
+        <item name="mpvWindowEnd">#FF030405</item>
+        <item name="mpvWindowGlowStart">#33B8C1CC</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20E3E9F0</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA1D242C</item>
+        <item name="mpvSurfaceEnd">#E60D1116</item>
+        <item name="mpvSurfaceAltStart">#7029323D</item>
+        <item name="mpvSurfaceAltEnd">#54171D24</item>
+        <item name="mpvSurfaceSoft">#14B8C1CC</item>
+        <item name="mpvSurfaceStrongStart">#DE303A45</item>
+        <item name="mpvSurfaceStrongEnd">#D2141A20</item>
+        <item name="mpvHeroStart">#D03D4A57</item>
+        <item name="mpvHeroEnd">#C2161C22</item>
+        <item name="mpvOverlayStart">#B81D242C</item>
+        <item name="mpvOverlayCenter">#AA101419</item>
+        <item name="mpvOverlayEnd">#A0050709</item>
+        <item name="mpvChipStart">#20E3E9F0</item>
+        <item name="mpvChipEnd">#12B8C1CC</item>
+        <item name="mpvStroke">#2AD9E2EC</item>
+        <item name="mpvStrokeStrong">#4AF0F5FA</item>
+    </style>
+
+    <style name="AppTheme.Oyster" parent="AppTheme">
+        <item name="colorPrimary">#FFC8B6A6</item>
+        <item name="colorPrimaryDark">#FF8A7466</item>
+        <item name="colorAccent">#FFE2D2C4</item>
+        <item name="mpvAccent">#FFC8B6A6</item>
+        <item name="mpvAccentHot">#FFE2D2C4</item>
+        <item name="mpvAccentDeep">#FF8A7466</item>
+        <item name="mpvFilterActiveIcon">#FFE2D2C4</item>
+        <item name="mpvStrokeFocus">#FFE2D2C4</item>
+        <item name="mpvFocusWash">#2EC8B6A6</item>
+        <item name="mpvFocusWashSoft">#18C8B6A6</item>
+        <item name="mpvWindowStart">#FF19130F</item>
+        <item name="mpvWindowCenter">#FF0F0B09</item>
+        <item name="mpvWindowEnd">#FF050403</item>
+        <item name="mpvWindowGlowStart">#33C8B6A6</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20E2D2C4</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA282019</item>
+        <item name="mpvSurfaceEnd">#E6140F0C</item>
+        <item name="mpvSurfaceAltStart">#70362B22</item>
+        <item name="mpvSurfaceAltEnd">#541F1914</item>
+        <item name="mpvSurfaceSoft">#14C8B6A6</item>
+        <item name="mpvSurfaceStrongStart">#DE3C3026</item>
+        <item name="mpvSurfaceStrongEnd">#D21A1410</item>
+        <item name="mpvHeroStart">#D04F4032</item>
+        <item name="mpvHeroEnd">#C21C1510</item>
+        <item name="mpvOverlayStart">#B8292019</item>
+        <item name="mpvOverlayCenter">#AA17120E</item>
+        <item name="mpvOverlayEnd">#A0080605</item>
+        <item name="mpvChipStart">#20E2D2C4</item>
+        <item name="mpvChipEnd">#12C8B6A6</item>
+        <item name="mpvStroke">#2AF0DED0</item>
+        <item name="mpvStrokeStrong">#4AF8E9DE</item>
+    </style>
+
+    <style name="AppTheme.Ivory" parent="AppTheme">
+        <item name="colorPrimary">#FFD8C690</item>
+        <item name="colorPrimaryDark">#FF9B8455</item>
+        <item name="colorAccent">#FFFFF1CC</item>
+        <item name="mpvAccent">#FFD8C690</item>
+        <item name="mpvAccentHot">#FFFFF1CC</item>
+        <item name="mpvAccentDeep">#FF9B8455</item>
+        <item name="mpvFilterActiveIcon">#FFFFF1CC</item>
+        <item name="mpvStrokeFocus">#FFFFF1CC</item>
+        <item name="mpvFocusWash">#2ED8C690</item>
+        <item name="mpvFocusWashSoft">#18D8C690</item>
+        <item name="mpvWindowStart">#FF191508</item>
+        <item name="mpvWindowCenter">#FF0F0C05</item>
+        <item name="mpvWindowEnd">#FF050401</item>
+        <item name="mpvWindowGlowStart">#33D8C690</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20FFF1CC</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2B2410</item>
+        <item name="mpvSurfaceEnd">#E6141107</item>
+        <item name="mpvSurfaceAltStart">#70382F15</item>
+        <item name="mpvSurfaceAltEnd">#54201A0B</item>
+        <item name="mpvSurfaceSoft">#14D8C690</item>
+        <item name="mpvSurfaceStrongStart">#DE3F3518</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1609</item>
+        <item name="mpvHeroStart">#D055471F</item>
+        <item name="mpvHeroEnd">#C21D1709</item>
+        <item name="mpvOverlayStart">#B82B240F</item>
+        <item name="mpvOverlayCenter">#AA181407</item>
+        <item name="mpvOverlayEnd">#A0080602</item>
+        <item name="mpvChipStart">#20FFF1CC</item>
+        <item name="mpvChipEnd">#12D8C690</item>
+        <item name="mpvStroke">#2AFFF4D5</item>
+        <item name="mpvStrokeStrong">#4AFFFAE8</item>
+    </style>
+
+    <style name="MpvThemeOverlay" />
+
+    <style name="MpvThemeOverlay.Amoled">
+        <item name="mpvWindowStart">#FF000000</item>
+        <item name="mpvWindowCenter">#FF000000</item>
+        <item name="mpvWindowEnd">#FF000000</item>
+        <item name="mpvWindowGlowStart">#00000000</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#00000000</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+    </style>
+
+    <style name="MpvThemeOverlay.PureBlackSurfaces">
+        <item name="mpvSurfaceStart">#E6000000</item>
+        <item name="mpvSurfaceEnd">#F0000000</item>
+        <item name="mpvSurfaceAltStart">#A0000000</item>
+        <item name="mpvSurfaceAltEnd">#86000000</item>
+        <item name="mpvSurfaceSoft">#70000000</item>
+        <item name="mpvSurfaceStrongStart">#F0000000</item>
+        <item name="mpvSurfaceStrongEnd">#F0000000</item>
+        <item name="mpvHeroStart">#E8000000</item>
+        <item name="mpvHeroEnd">#DC000000</item>
+        <item name="mpvOverlayStart">#CC000000</item>
+        <item name="mpvOverlayCenter">#B8000000</item>
+        <item name="mpvOverlayEnd">#AC000000</item>
+        <item name="mpvChipStart">#18FFFFFF</item>
+        <item name="mpvChipEnd">#0EFFFFFF</item>
+        <item name="mpvStroke">#26FFFFFF</item>
+        <item name="mpvStrokeStrong">#42FFFFFF</item>
+    </style>
+
+    <!-- A/B TEST (Stremio result delivery): translucent so the launching app (Stremio) is NOT
+         stopped while the player is up, which keeps its registerForActivityResult callback
+         alive to receive our watched/auto-next result. Trade-off: may reintroduce Nuvio's
+         episode-flash on exit. If this fixes Stremio, replace the opaque-stop with a black
+         exit cover that masks the flash without stopping the caller. -->
+    <style name="AppTheme.ExternalPlayer" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="AppTheme.Launcher" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+
+    <style name="TvAlertDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="colorPrimary">?attr/mpvAccent</item>
+        <item name="colorAccent">?attr/mpvAccentHot</item>
+        <item name="android:windowBackground">@drawable/bg_tv_dialog</item>
+        <item name="android:textColorPrimary">@color/tv_text</item>
+        <item name="android:textColorSecondary">@color/tv_text_dim</item>
+        <item name="android:colorBackground">?attr/mpvWindowEnd</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/tv_check_indicator</item>
+        <item name="textColorAlertDialogListItem">@color/tv_text</item>
+    </style>
+
+    <style name="AppTheme.Preference" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_tv_launcher</item>
+        <item name="colorPrimary">?attr/mpvAccent</item>
+        <item name="colorPrimaryInverse">@color/tv_purple_hot</item>
+        <item name="colorOnPrimary">@color/tv_text_on_accent</item>
+        <item name="colorSecondary">@color/tv_purple_hot</item>
+        <item name="mpvAccent">@color/tv_purple</item>
+        <item name="mpvAccentHot">@color/tv_purple_hot</item>
+        <item name="mpvAccentDeep">@color/tv_purple_deep</item>
+        <item name="mpvAccentInk">@color/tv_purple_ink</item>
+        <item name="mpvTextOnAccent">@color/tv_text_on_accent</item>
+        <item name="mpvFilterActiveIcon">@color/tv_filter_active_icon</item>
+        <item name="mpvWindowStart">#FF101216</item>
+        <item name="mpvWindowCenter">#FF090B0E</item>
+        <item name="mpvWindowEnd">#FF040506</item>
+        <item name="mpvWindowGlowStart">#22FFFFFF</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#16D8DDE3</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">@color/tv_surface</item>
+        <item name="mpvSurfaceEnd">#E6151E2B</item>
+        <item name="mpvSurfaceAltStart">#68171C23</item>
+        <item name="mpvSurfaceAltEnd">#52101418</item>
+        <item name="mpvSurfaceSoft">@color/tv_surface_soft</item>
+        <item name="mpvSurfaceStrongStart">#DA141D2A</item>
+        <item name="mpvSurfaceStrongEnd">#D20D131C</item>
+        <item name="mpvHeroStart">#CF1A2736</item>
+        <item name="mpvHeroEnd">#C20D141E</item>
+        <item name="mpvOverlayStart">#B812161B</item>
+        <item name="mpvOverlayCenter">#AA111418</item>
+        <item name="mpvOverlayEnd">#A00C0E12</item>
+        <item name="mpvChipStart">#14FFFFFF</item>
+        <item name="mpvChipEnd">#0DFFFFFF</item>
+        <item name="mpvStroke">@color/tv_stroke</item>
+        <item name="mpvStrokeStrong">@color/tv_stroke_strong</item>
+        <item name="mpvStrokeFocus">@color/tv_stroke_focus</item>
+        <item name="mpvFocusWash">@color/tv_focus_wash</item>
+        <item name="mpvFocusWashSoft">@color/tv_focus_wash_soft</item>
+        <item name="colorSurface">@color/tv_charcoal</item>
+        <item name="colorSurfaceContainer">@color/tv_surface_strong</item>
+        <item name="colorSurfaceVariant">@color/tv_surface_alt</item>
+        <item name="colorOnSurface">@color/tv_text</item>
+        <item name="colorOnSurfaceVariant">@color/tv_text_dim</item>
+        <item name="colorOutline">@color/tv_stroke_strong</item>
+        <item name="toolbarStyle">@style/AppTheme.Toolbar.Style</item>
+        <item name="materialToolbarStyle">@style/AppTheme.Toolbar.Style</item>
+        <item name="alertDialogTheme">@style/AppTheme.Preference.AlertDialog</item>
+        <item name="materialAlertDialogTheme">@style/AppTheme.Preference.AlertDialog</item>
+    </style>
+
+    <style name="AppTheme.Preference.Ocean" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF1E88E5</item>
+        <item name="colorPrimaryInverse">#FF42A5F5</item>
+        <item name="colorSecondary">#FF42A5F5</item>
+        <item name="mpvAccent">#FF1E88E5</item>
+        <item name="mpvAccentHot">#FF42A5F5</item>
+        <item name="mpvAccentDeep">#FF1565C0</item>
+        <item name="mpvFilterActiveIcon">#FF42A5F5</item>
+        <item name="mpvStrokeFocus">#FF42A5F5</item>
+        <item name="mpvFocusWash">#2E1E88E5</item>
+        <item name="mpvFocusWashSoft">#181E88E5</item>
+        <item name="mpvWindowStart">#FF06111A</item>
+        <item name="mpvWindowCenter">#FF03080D</item>
+        <item name="mpvWindowEnd">#FF020304</item>
+        <item name="mpvWindowGlowStart">#332186D9</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#1C42A5F5</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0A1A29</item>
+        <item name="mpvSurfaceEnd">#E607111C</item>
+        <item name="mpvSurfaceAltStart">#7010202F</item>
+        <item name="mpvSurfaceAltEnd">#54101A25</item>
+        <item name="mpvSurfaceSoft">#142A8FDB</item>
+        <item name="mpvSurfaceStrongStart">#DE0D1F30</item>
+        <item name="mpvSurfaceStrongEnd">#D2091522</item>
+        <item name="mpvHeroStart">#D0162F46</item>
+        <item name="mpvHeroEnd">#C2071420</item>
+        <item name="mpvOverlayStart">#B80A1722</item>
+        <item name="mpvOverlayCenter">#AA08111A</item>
+        <item name="mpvOverlayEnd">#A0050A10</item>
+        <item name="mpvChipStart">#1E42A5F5</item>
+        <item name="mpvChipEnd">#122A8FDB</item>
+        <item name="mpvStroke">#2A8BC9FF</item>
+        <item name="mpvStrokeStrong">#4AA7D5FF</item>
+    </style>
+
+    <style name="AppTheme.Preference.Crimson" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFE53935</item>
+        <item name="colorPrimaryInverse">#FFFF5252</item>
+        <item name="colorSecondary">#FFFF5252</item>
+        <item name="mpvAccent">#FFE53935</item>
+        <item name="mpvAccentHot">#FFFF5252</item>
+        <item name="mpvAccentDeep">#FFC62828</item>
+        <item name="mpvFilterActiveIcon">#FFFF5252</item>
+        <item name="mpvStrokeFocus">#FFFF5252</item>
+        <item name="mpvFocusWash">#2EE53935</item>
+        <item name="mpvFocusWashSoft">#18E53935</item>
+        <item name="mpvWindowStart">#FF1A0709</item>
+        <item name="mpvWindowCenter">#FF0D0406</item>
+        <item name="mpvWindowEnd">#FF050203</item>
+        <item name="mpvWindowGlowStart">#35E53935</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#1EFF5252</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA250D10</item>
+        <item name="mpvSurfaceEnd">#E6110708</item>
+        <item name="mpvSurfaceAltStart">#70311416</item>
+        <item name="mpvSurfaceAltEnd">#541C0C0E</item>
+        <item name="mpvSurfaceSoft">#14E53935</item>
+        <item name="mpvSurfaceStrongStart">#DE321014</item>
+        <item name="mpvSurfaceStrongEnd">#D216090B</item>
+        <item name="mpvHeroStart">#D0451519</item>
+        <item name="mpvHeroEnd">#C218090C</item>
+        <item name="mpvOverlayStart">#B8240B0E</item>
+        <item name="mpvOverlayCenter">#AA160709</item>
+        <item name="mpvOverlayEnd">#A0080304</item>
+        <item name="mpvChipStart">#1EFF5252</item>
+        <item name="mpvChipEnd">#12E53935</item>
+        <item name="mpvStroke">#2AFF8A8A</item>
+        <item name="mpvStrokeStrong">#4AFFA3A3</item>
+    </style>
+
+    <style name="AppTheme.Preference.Violet" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF8E24AA</item>
+        <item name="colorPrimaryInverse">#FFAB47BC</item>
+        <item name="colorSecondary">#FFAB47BC</item>
+        <item name="mpvAccent">#FF8E24AA</item>
+        <item name="mpvAccentHot">#FFAB47BC</item>
+        <item name="mpvAccentDeep">#FF6A1B9A</item>
+        <item name="mpvFilterActiveIcon">#FFAB47BC</item>
+        <item name="mpvStrokeFocus">#FFAB47BC</item>
+        <item name="mpvFocusWash">#2E8E24AA</item>
+        <item name="mpvFocusWashSoft">#188E24AA</item>
+        <item name="mpvWindowStart">#FF13091A</item>
+        <item name="mpvWindowCenter">#FF0A0510</item>
+        <item name="mpvWindowEnd">#FF040206</item>
+        <item name="mpvWindowGlowStart">#358E24AA</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20AB47BC</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA1F0D29</item>
+        <item name="mpvSurfaceEnd">#E60F0717</item>
+        <item name="mpvSurfaceAltStart">#702A1335</item>
+        <item name="mpvSurfaceAltEnd">#54190920</item>
+        <item name="mpvSurfaceSoft">#148E24AA</item>
+        <item name="mpvSurfaceStrongStart">#DE2E123C</item>
+        <item name="mpvSurfaceStrongEnd">#D2140820</item>
+        <item name="mpvHeroStart">#D03E1950</item>
+        <item name="mpvHeroEnd">#C2150820</item>
+        <item name="mpvOverlayStart">#B8210C2A</item>
+        <item name="mpvOverlayCenter">#AA15071B</item>
+        <item name="mpvOverlayEnd">#A008030B</item>
+        <item name="mpvChipStart">#20AB47BC</item>
+        <item name="mpvChipEnd">#128E24AA</item>
+        <item name="mpvStroke">#2ACB7BE0</item>
+        <item name="mpvStrokeStrong">#4ADAA0EA</item>
+    </style>
+
+    <style name="AppTheme.Preference.Emerald" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF43A047</item>
+        <item name="colorPrimaryInverse">#FF66BB6A</item>
+        <item name="colorSecondary">#FF66BB6A</item>
+        <item name="mpvAccent">#FF43A047</item>
+        <item name="mpvAccentHot">#FF66BB6A</item>
+        <item name="mpvAccentDeep">#FF2E7D32</item>
+        <item name="mpvFilterActiveIcon">#FF66BB6A</item>
+        <item name="mpvStrokeFocus">#FF66BB6A</item>
+        <item name="mpvFocusWash">#2E43A047</item>
+        <item name="mpvFocusWashSoft">#1843A047</item>
+        <item name="mpvWindowStart">#FF07170D</item>
+        <item name="mpvWindowCenter">#FF031007</item>
+        <item name="mpvWindowEnd">#FF010603</item>
+        <item name="mpvWindowGlowStart">#3543A047</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2066BB6A</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0A2411</item>
+        <item name="mpvSurfaceEnd">#E6061209</item>
+        <item name="mpvSurfaceAltStart">#70112E18</item>
+        <item name="mpvSurfaceAltEnd">#540B1B10</item>
+        <item name="mpvSurfaceSoft">#1443A047</item>
+        <item name="mpvSurfaceStrongStart">#DE0E3218</item>
+        <item name="mpvSurfaceStrongEnd">#D208180C</item>
+        <item name="mpvHeroStart">#D0174324</item>
+        <item name="mpvHeroEnd">#C2081A0D</item>
+        <item name="mpvOverlayStart">#B80B2411</item>
+        <item name="mpvOverlayCenter">#AA07160B</item>
+        <item name="mpvOverlayEnd">#A0030804</item>
+        <item name="mpvChipStart">#2066BB6A</item>
+        <item name="mpvChipEnd">#1243A047</item>
+        <item name="mpvStroke">#2A8BE28F</item>
+        <item name="mpvStrokeStrong">#4AA8EBAA</item>
+    </style>
+
+    <style name="AppTheme.Preference.Amber" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFFB8C00</item>
+        <item name="colorPrimaryInverse">#FFFFA726</item>
+        <item name="colorSecondary">#FFFFA726</item>
+        <item name="mpvAccent">#FFFB8C00</item>
+        <item name="mpvAccentHot">#FFFFA726</item>
+        <item name="mpvAccentDeep">#FFEF6C00</item>
+        <item name="mpvFilterActiveIcon">#FFFFA726</item>
+        <item name="mpvStrokeFocus">#FFFFA726</item>
+        <item name="mpvFocusWash">#2EFB8C00</item>
+        <item name="mpvFocusWashSoft">#18FB8C00</item>
+        <item name="mpvWindowStart">#FF1A1004</item>
+        <item name="mpvWindowCenter">#FF100903</item>
+        <item name="mpvWindowEnd">#FF060301</item>
+        <item name="mpvWindowGlowStart">#38FB8C00</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22FFA726</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A1807</item>
+        <item name="mpvSurfaceEnd">#E6140B03</item>
+        <item name="mpvSurfaceAltStart">#7038200A</item>
+        <item name="mpvSurfaceAltEnd">#54201206</item>
+        <item name="mpvSurfaceSoft">#14FB8C00</item>
+        <item name="mpvSurfaceStrongStart">#DE3B230A</item>
+        <item name="mpvSurfaceStrongEnd">#D21B0F04</item>
+        <item name="mpvHeroStart">#D0502F0D</item>
+        <item name="mpvHeroEnd">#C21C1004</item>
+        <item name="mpvOverlayStart">#B82A1806</item>
+        <item name="mpvOverlayCenter">#AA170D03</item>
+        <item name="mpvOverlayEnd">#A0080401</item>
+        <item name="mpvChipStart">#22FFA726</item>
+        <item name="mpvChipEnd">#12FB8C00</item>
+        <item name="mpvStroke">#2AFFC56B</item>
+        <item name="mpvStrokeStrong">#4AFFD38C</item>
+    </style>
+
+    <style name="AppTheme.Preference.Rose" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFD81B60</item>
+        <item name="colorPrimaryInverse">#FFEC407A</item>
+        <item name="colorSecondary">#FFEC407A</item>
+        <item name="mpvAccent">#FFD81B60</item>
+        <item name="mpvAccentHot">#FFEC407A</item>
+        <item name="mpvAccentDeep">#FFC2185B</item>
+        <item name="mpvFilterActiveIcon">#FFEC407A</item>
+        <item name="mpvStrokeFocus">#FFEC407A</item>
+        <item name="mpvFocusWash">#2ED81B60</item>
+        <item name="mpvFocusWashSoft">#18D81B60</item>
+        <item name="mpvWindowStart">#FF1A0610</item>
+        <item name="mpvWindowCenter">#FF0E0409</item>
+        <item name="mpvWindowEnd">#FF050204</item>
+        <item name="mpvWindowGlowStart">#35D81B60</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20EC407A</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A0A18</item>
+        <item name="mpvSurfaceEnd">#E6140610</item>
+        <item name="mpvSurfaceAltStart">#70361322</item>
+        <item name="mpvSurfaceAltEnd">#541F0A14</item>
+        <item name="mpvSurfaceSoft">#14D81B60</item>
+        <item name="mpvSurfaceStrongStart">#DE3D1125</item>
+        <item name="mpvSurfaceStrongEnd">#D21B0711</item>
+        <item name="mpvHeroStart">#D0501730</item>
+        <item name="mpvHeroEnd">#C21B0711</item>
+        <item name="mpvOverlayStart">#B82A0A18</item>
+        <item name="mpvOverlayCenter">#AA18060E</item>
+        <item name="mpvOverlayEnd">#A0080305</item>
+        <item name="mpvChipStart">#20EC407A</item>
+        <item name="mpvChipEnd">#12D81B60</item>
+        <item name="mpvStroke">#2AFF8CB2</item>
+        <item name="mpvStrokeStrong">#4AFFA8C8</item>
+    </style>
+
+    <style name="AppTheme.Preference.Cyan" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF00ACC1</item>
+        <item name="colorPrimaryInverse">#FF26C6DA</item>
+        <item name="colorSecondary">#FF26C6DA</item>
+        <item name="mpvAccent">#FF00ACC1</item>
+        <item name="mpvAccentHot">#FF26C6DA</item>
+        <item name="mpvAccentDeep">#FF00838F</item>
+        <item name="mpvFilterActiveIcon">#FF26C6DA</item>
+        <item name="mpvStrokeFocus">#FF26C6DA</item>
+        <item name="mpvFocusWash">#2E00ACC1</item>
+        <item name="mpvFocusWashSoft">#1800ACC1</item>
+        <item name="mpvWindowStart">#FF06191A</item>
+        <item name="mpvWindowCenter">#FF031011</item>
+        <item name="mpvWindowEnd">#FF010607</item>
+        <item name="mpvWindowGlowStart">#3300ACC1</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2026C6DA</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA082326</item>
+        <item name="mpvSurfaceEnd">#E6041113</item>
+        <item name="mpvSurfaceAltStart">#7020383B</item>
+        <item name="mpvSurfaceAltEnd">#54102022</item>
+        <item name="mpvSurfaceSoft">#1400ACC1</item>
+        <item name="mpvSurfaceStrongStart">#DE0A3034</item>
+        <item name="mpvSurfaceStrongEnd">#D205181A</item>
+        <item name="mpvHeroStart">#D00D4248</item>
+        <item name="mpvHeroEnd">#C2051A1D</item>
+        <item name="mpvOverlayStart">#B8082326</item>
+        <item name="mpvOverlayCenter">#AA041517</item>
+        <item name="mpvOverlayEnd">#A0020809</item>
+        <item name="mpvChipStart">#2026C6DA</item>
+        <item name="mpvChipEnd">#1200ACC1</item>
+        <item name="mpvStroke">#2A73E8F2</item>
+        <item name="mpvStrokeStrong">#4A9AF2FA</item>
+    </style>
+
+    <style name="AppTheme.Preference.Lime" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF9E9D24</item>
+        <item name="colorPrimaryInverse">#FFD4E157</item>
+        <item name="colorSecondary">#FFD4E157</item>
+        <item name="mpvAccent">#FF9E9D24</item>
+        <item name="mpvAccentHot">#FFD4E157</item>
+        <item name="mpvAccentDeep">#FF827717</item>
+        <item name="mpvFilterActiveIcon">#FFD4E157</item>
+        <item name="mpvStrokeFocus">#FFD4E157</item>
+        <item name="mpvFocusWash">#2E9E9D24</item>
+        <item name="mpvFocusWashSoft">#189E9D24</item>
+        <item name="mpvWindowStart">#FF151607</item>
+        <item name="mpvWindowCenter">#FF0D0E04</item>
+        <item name="mpvWindowEnd">#FF050601</item>
+        <item name="mpvWindowGlowStart">#389E9D24</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22D4E157</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA25250A</item>
+        <item name="mpvSurfaceEnd">#E6121205</item>
+        <item name="mpvSurfaceAltStart">#70333313</item>
+        <item name="mpvSurfaceAltEnd">#541D1D09</item>
+        <item name="mpvSurfaceSoft">#149E9D24</item>
+        <item name="mpvSurfaceStrongStart">#DE363610</item>
+        <item name="mpvSurfaceStrongEnd">#D2181807</item>
+        <item name="mpvHeroStart">#D0474614</item>
+        <item name="mpvHeroEnd">#C21A1A08</item>
+        <item name="mpvOverlayStart">#B823230A</item>
+        <item name="mpvOverlayCenter">#AA151506</item>
+        <item name="mpvOverlayEnd">#A0070702</item>
+        <item name="mpvChipStart">#22D4E157</item>
+        <item name="mpvChipEnd">#129E9D24</item>
+        <item name="mpvStroke">#2AE5EF8A</item>
+        <item name="mpvStrokeStrong">#4AF0F7A6</item>
+    </style>
+
+    <style name="AppTheme.Preference.Gold" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFFDD835</item>
+        <item name="colorPrimaryInverse">#FFFFEB3B</item>
+        <item name="colorSecondary">#FFFFEB3B</item>
+        <item name="mpvAccent">#FFFDD835</item>
+        <item name="mpvAccentHot">#FFFFEB3B</item>
+        <item name="mpvAccentDeep">#FFF9A825</item>
+        <item name="mpvFilterActiveIcon">#FFFFEB3B</item>
+        <item name="mpvStrokeFocus">#FFFFEB3B</item>
+        <item name="mpvFocusWash">#2EFDD835</item>
+        <item name="mpvFocusWashSoft">#18FDD835</item>
+        <item name="mpvWindowStart">#FF171703</item>
+        <item name="mpvWindowCenter">#FF0D0D02</item>
+        <item name="mpvWindowEnd">#FF050500</item>
+        <item name="mpvWindowGlowStart">#38FDD835</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22FFEB3B</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA282407</item>
+        <item name="mpvSurfaceEnd">#E6151304</item>
+        <item name="mpvSurfaceAltStart">#7038320A</item>
+        <item name="mpvSurfaceAltEnd">#54201C06</item>
+        <item name="mpvSurfaceSoft">#14FDD835</item>
+        <item name="mpvSurfaceStrongStart">#DE3C3508</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1703</item>
+        <item name="mpvHeroStart">#D050450A</item>
+        <item name="mpvHeroEnd">#C21D1803</item>
+        <item name="mpvOverlayStart">#B82A2404</item>
+        <item name="mpvOverlayCenter">#AA171303</item>
+        <item name="mpvOverlayEnd">#A0080701</item>
+        <item name="mpvChipStart">#22FFEB3B</item>
+        <item name="mpvChipEnd">#12FDD835</item>
+        <item name="mpvStroke">#2AFFF176</item>
+        <item name="mpvStrokeStrong">#4AFFF59D</item>
+    </style>
+
+    <style name="AppTheme.Preference.Copper" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFB87333</item>
+        <item name="colorPrimaryInverse">#FFD08A49</item>
+        <item name="colorSecondary">#FFD08A49</item>
+        <item name="mpvAccent">#FFB87333</item>
+        <item name="mpvAccentHot">#FFD08A49</item>
+        <item name="mpvAccentDeep">#FF8D4B24</item>
+        <item name="mpvFilterActiveIcon">#FFD08A49</item>
+        <item name="mpvStrokeFocus">#FFD08A49</item>
+        <item name="mpvFocusWash">#2EB87333</item>
+        <item name="mpvFocusWashSoft">#18B87333</item>
+        <item name="mpvWindowStart">#FF1A0F08</item>
+        <item name="mpvWindowCenter">#FF100905</item>
+        <item name="mpvWindowEnd">#FF060302</item>
+        <item name="mpvWindowGlowStart">#38B87333</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#22D08A49</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2A180C</item>
+        <item name="mpvSurfaceEnd">#E6140C06</item>
+        <item name="mpvSurfaceAltStart">#70382313</item>
+        <item name="mpvSurfaceAltEnd">#5420140B</item>
+        <item name="mpvSurfaceSoft">#14B87333</item>
+        <item name="mpvSurfaceStrongStart">#DE3D2512</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1008</item>
+        <item name="mpvHeroStart">#D0523218</item>
+        <item name="mpvHeroEnd">#C21D1008</item>
+        <item name="mpvOverlayStart">#B82A180B</item>
+        <item name="mpvOverlayCenter">#AA170D06</item>
+        <item name="mpvOverlayEnd">#A0080402</item>
+        <item name="mpvChipStart">#22D08A49</item>
+        <item name="mpvChipEnd">#12B87333</item>
+        <item name="mpvStroke">#2AF0B078</item>
+        <item name="mpvStrokeStrong">#4AF7C797</item>
+    </style>
+
+    <style name="AppTheme.Preference.Indigo" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF3949AB</item>
+        <item name="colorPrimaryInverse">#FF5C6BC0</item>
+        <item name="colorSecondary">#FF5C6BC0</item>
+        <item name="mpvAccent">#FF3949AB</item>
+        <item name="mpvAccentHot">#FF5C6BC0</item>
+        <item name="mpvAccentDeep">#FF283593</item>
+        <item name="mpvFilterActiveIcon">#FF5C6BC0</item>
+        <item name="mpvStrokeFocus">#FF5C6BC0</item>
+        <item name="mpvFocusWash">#2E3949AB</item>
+        <item name="mpvFocusWashSoft">#183949AB</item>
+        <item name="mpvWindowStart">#FF080B1A</item>
+        <item name="mpvWindowCenter">#FF040610</item>
+        <item name="mpvWindowEnd">#FF020306</item>
+        <item name="mpvWindowGlowStart">#383949AB</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#225C6BC0</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA0D122A</item>
+        <item name="mpvSurfaceEnd">#E6070A16</item>
+        <item name="mpvSurfaceAltStart">#70141A38</item>
+        <item name="mpvSurfaceAltEnd">#540B0F20</item>
+        <item name="mpvSurfaceSoft">#143949AB</item>
+        <item name="mpvSurfaceStrongStart">#DE11183D</item>
+        <item name="mpvSurfaceStrongEnd">#D2090D1B</item>
+        <item name="mpvHeroStart">#D0182452</item>
+        <item name="mpvHeroEnd">#C2090D1E</item>
+        <item name="mpvOverlayStart">#B80C112A</item>
+        <item name="mpvOverlayCenter">#AA070B17</item>
+        <item name="mpvOverlayEnd">#A0030408</item>
+        <item name="mpvChipStart">#225C6BC0</item>
+        <item name="mpvChipEnd">#123949AB</item>
+        <item name="mpvStroke">#2A8E9AF0</item>
+        <item name="mpvStrokeStrong">#4AAAB4FF</item>
+    </style>
+
+    <style name="AppTheme.Preference.Slate" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FF78909C</item>
+        <item name="colorPrimaryInverse">#FF90A4AE</item>
+        <item name="colorSecondary">#FF90A4AE</item>
+        <item name="mpvAccent">#FF78909C</item>
+        <item name="mpvAccentHot">#FF90A4AE</item>
+        <item name="mpvAccentDeep">#FF546E7A</item>
+        <item name="mpvFilterActiveIcon">#FF90A4AE</item>
+        <item name="mpvStrokeFocus">#FF90A4AE</item>
+        <item name="mpvFocusWash">#2E78909C</item>
+        <item name="mpvFocusWashSoft">#1878909C</item>
+        <item name="mpvWindowStart">#FF0D1214</item>
+        <item name="mpvWindowCenter">#FF070A0C</item>
+        <item name="mpvWindowEnd">#FF030405</item>
+        <item name="mpvWindowGlowStart">#3378909C</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#2090A4AE</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA151D20</item>
+        <item name="mpvSurfaceEnd">#E60B0F11</item>
+        <item name="mpvSurfaceAltStart">#70202A2E</item>
+        <item name="mpvSurfaceAltEnd">#5412181B</item>
+        <item name="mpvSurfaceSoft">#1478909C</item>
+        <item name="mpvSurfaceStrongStart">#DE222D32</item>
+        <item name="mpvSurfaceStrongEnd">#D20F1518</item>
+        <item name="mpvHeroStart">#D02D3A40</item>
+        <item name="mpvHeroEnd">#C211171A</item>
+        <item name="mpvOverlayStart">#B8171F22</item>
+        <item name="mpvOverlayCenter">#AA0D1113</item>
+        <item name="mpvOverlayEnd">#A0040607</item>
+        <item name="mpvChipStart">#2090A4AE</item>
+        <item name="mpvChipEnd">#1278909C</item>
+        <item name="mpvStroke">#2AC0D3DC</item>
+        <item name="mpvStrokeStrong">#4AD4E3EA</item>
+    </style>
+
+    <style name="AppTheme.Preference.Chrome" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFB8C1CC</item>
+        <item name="colorPrimaryInverse">#FFE3E9F0</item>
+        <item name="colorSecondary">#FFE3E9F0</item>
+        <item name="mpvAccent">#FFB8C1CC</item>
+        <item name="mpvAccentHot">#FFE3E9F0</item>
+        <item name="mpvAccentDeep">#FF6F7D8B</item>
+        <item name="mpvFilterActiveIcon">#FFE3E9F0</item>
+        <item name="mpvStrokeFocus">#FFE3E9F0</item>
+        <item name="mpvFocusWash">#2EB8C1CC</item>
+        <item name="mpvFocusWashSoft">#18B8C1CC</item>
+        <item name="mpvWindowStart">#FF12161A</item>
+        <item name="mpvWindowCenter">#FF090C10</item>
+        <item name="mpvWindowEnd">#FF030405</item>
+        <item name="mpvWindowGlowStart">#33B8C1CC</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20E3E9F0</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA1D242C</item>
+        <item name="mpvSurfaceEnd">#E60D1116</item>
+        <item name="mpvSurfaceAltStart">#7029323D</item>
+        <item name="mpvSurfaceAltEnd">#54171D24</item>
+        <item name="mpvSurfaceSoft">#14B8C1CC</item>
+        <item name="mpvSurfaceStrongStart">#DE303A45</item>
+        <item name="mpvSurfaceStrongEnd">#D2141A20</item>
+        <item name="mpvHeroStart">#D03D4A57</item>
+        <item name="mpvHeroEnd">#C2161C22</item>
+        <item name="mpvOverlayStart">#B81D242C</item>
+        <item name="mpvOverlayCenter">#AA101419</item>
+        <item name="mpvOverlayEnd">#A0050709</item>
+        <item name="mpvChipStart">#20E3E9F0</item>
+        <item name="mpvChipEnd">#12B8C1CC</item>
+        <item name="mpvStroke">#2AD9E2EC</item>
+        <item name="mpvStrokeStrong">#4AF0F5FA</item>
+    </style>
+
+    <style name="AppTheme.Preference.Oyster" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFC8B6A6</item>
+        <item name="colorPrimaryInverse">#FFE2D2C4</item>
+        <item name="colorSecondary">#FFE2D2C4</item>
+        <item name="mpvAccent">#FFC8B6A6</item>
+        <item name="mpvAccentHot">#FFE2D2C4</item>
+        <item name="mpvAccentDeep">#FF8A7466</item>
+        <item name="mpvFilterActiveIcon">#FFE2D2C4</item>
+        <item name="mpvStrokeFocus">#FFE2D2C4</item>
+        <item name="mpvFocusWash">#2EC8B6A6</item>
+        <item name="mpvFocusWashSoft">#18C8B6A6</item>
+        <item name="mpvWindowStart">#FF19130F</item>
+        <item name="mpvWindowCenter">#FF0F0B09</item>
+        <item name="mpvWindowEnd">#FF050403</item>
+        <item name="mpvWindowGlowStart">#33C8B6A6</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20E2D2C4</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA282019</item>
+        <item name="mpvSurfaceEnd">#E6140F0C</item>
+        <item name="mpvSurfaceAltStart">#70362B22</item>
+        <item name="mpvSurfaceAltEnd">#541F1914</item>
+        <item name="mpvSurfaceSoft">#14C8B6A6</item>
+        <item name="mpvSurfaceStrongStart">#DE3C3026</item>
+        <item name="mpvSurfaceStrongEnd">#D21A1410</item>
+        <item name="mpvHeroStart">#D04F4032</item>
+        <item name="mpvHeroEnd">#C21C1510</item>
+        <item name="mpvOverlayStart">#B8292019</item>
+        <item name="mpvOverlayCenter">#AA17120E</item>
+        <item name="mpvOverlayEnd">#A0080605</item>
+        <item name="mpvChipStart">#20E2D2C4</item>
+        <item name="mpvChipEnd">#12C8B6A6</item>
+        <item name="mpvStroke">#2AF0DED0</item>
+        <item name="mpvStrokeStrong">#4AF8E9DE</item>
+    </style>
+
+    <style name="AppTheme.Preference.Ivory" parent="AppTheme.Preference">
+        <item name="colorPrimary">#FFD8C690</item>
+        <item name="colorPrimaryInverse">#FFFFF1CC</item>
+        <item name="colorSecondary">#FFFFF1CC</item>
+        <item name="mpvAccent">#FFD8C690</item>
+        <item name="mpvAccentHot">#FFFFF1CC</item>
+        <item name="mpvAccentDeep">#FF9B8455</item>
+        <item name="mpvFilterActiveIcon">#FFFFF1CC</item>
+        <item name="mpvStrokeFocus">#FFFFF1CC</item>
+        <item name="mpvFocusWash">#2ED8C690</item>
+        <item name="mpvFocusWashSoft">#18D8C690</item>
+        <item name="mpvWindowStart">#FF191508</item>
+        <item name="mpvWindowCenter">#FF0F0C05</item>
+        <item name="mpvWindowEnd">#FF050401</item>
+        <item name="mpvWindowGlowStart">#33D8C690</item>
+        <item name="mpvWindowGlowEnd">#00000000</item>
+        <item name="mpvWindowGlowAltStart">#20FFF1CC</item>
+        <item name="mpvWindowGlowAltEnd">#00000000</item>
+        <item name="mpvSurfaceStart">#BA2B2410</item>
+        <item name="mpvSurfaceEnd">#E6141107</item>
+        <item name="mpvSurfaceAltStart">#70382F15</item>
+        <item name="mpvSurfaceAltEnd">#54201A0B</item>
+        <item name="mpvSurfaceSoft">#14D8C690</item>
+        <item name="mpvSurfaceStrongStart">#DE3F3518</item>
+        <item name="mpvSurfaceStrongEnd">#D21B1609</item>
+        <item name="mpvHeroStart">#D055471F</item>
+        <item name="mpvHeroEnd">#C21D1709</item>
+        <item name="mpvOverlayStart">#B82B240F</item>
+        <item name="mpvOverlayCenter">#AA181407</item>
+        <item name="mpvOverlayEnd">#A0080602</item>
+        <item name="mpvChipStart">#20FFF1CC</item>
+        <item name="mpvChipEnd">#12D8C690</item>
+        <item name="mpvStroke">#2AFFF4D5</item>
+        <item name="mpvStrokeStrong">#4AFFFAE8</item>
+    </style>
+
+    <style name="AppTheme.Toolbar.Style" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="titleTextColor">@color/tv_text</item>
+        <item name="subtitleTextColor">@color/tv_text_dim</item>
+        <item name="navigationIconTint">@color/tv_text</item>
+    </style>
+
+    <style name="AppTheme.Preference.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="dialogCornerRadius">28dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="colorPrimary">?attr/mpvAccent</item>
+        <item name="colorOnSurface">@color/tv_text</item>
+        <item name="android:colorBackground">?attr/mpvSurfaceStrongEnd</item>
+    </style>
+
+    <style name="MpvPlayer.ButtonBar" parent="Widget.AppCompat.ButtonBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+    </style>
+
+    <style name="MpvPlayer.ButtonBarButton" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:background">@drawable/bg_tv_player_button</item>
+        <item name="android:minWidth">56dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:textColor">@color/tv_text</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginStart">2dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+    </style>
+
+    <style name="MpvPlayer.ButtonBarIconButton" parent="MpvPlayer.ButtonBarButton">
+        <item name="android:background">@drawable/bg_tv_player_icon_button</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="Mpv.SurfaceButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_dialog_action</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:textColor">@color/tv_text</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Mpv.SurfaceButton.Compact" parent="Mpv.SurfaceButton">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">40dp</item>
+        <item name="android:minEms">0</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:background">@drawable/alpha_darken</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:includeFontPadding">true</item>
+    </style>
+
+    <style name="Mpv.DrawerTabButton" parent="Mpv.SurfaceButton">
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="MpvTv" />
+
+    <style name="MpvTv.TextSmallCaps">
+        <item name="android:textColor">@color/tv_text_mute</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.22</item>
+    </style>
+
+    <!-- Subtitle style customizer rows -->
+    <style name="SubStyleStepperRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/bg_tv_panel_card</item>
+        <item name="android:minHeight">76dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="SubStyleIconChip">
+        <item name="android:layout_width">34dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_tv_icon_chip</item>
+    </style>
+
+    <style name="SubStyleIcon">
+        <item name="android:layout_width">18dp</item>
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="SubStyleLabelGroup">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="SubStyleTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/tv_text</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SubStyleSummary">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/tv_text_dim</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="SubStyleColorChip">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:layout_marginEnd">6dp</item>
+    </style>
+
+    <style name="SubStyleValue">
+        <item name="android:layout_width">72dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/tv_text</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
